@@ -18,6 +18,8 @@ namespace Logic_Inventory
         public DataTable Listar()
         {
             DataTable R = new DataTable();
+            Conexion MyCnn = new Conexion();
+            R = MyCnn.DMLSelect("SPUsuarioRolListar");
             return R;
         }
 

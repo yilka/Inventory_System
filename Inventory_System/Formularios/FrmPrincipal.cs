@@ -16,5 +16,19 @@ namespace Inventory_System.Formularios
         {
             InitializeComponent();
         }
+
+        private void FrmPrincipal_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void usuarioToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (!Locales.ObjetosGlobales.MiFormGestionUsuarios.Visible)
+            {
+                Locales.ObjetosGlobales.MiFormGestionUsuarios = new FrmUsuarioGestion();
+                Locales.ObjetosGlobales.MiFormGestionUsuarios.Show();
+            }
+        }
     }
 }

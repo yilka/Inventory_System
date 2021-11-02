@@ -63,9 +63,9 @@ namespace Inventory_System.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap _115733_eye_see_show_watch_view_icon {
+        internal static System.Drawing.Bitmap _403017_avatar_default_head_person_unknown_icon__1_ {
             get {
-                object obj = ResourceManager.GetObject("115733_eye_see_show_watch_view_icon", resourceCulture);
+                object obj = ResourceManager.GetObject("403017_avatar_default_head_person_unknown_icon (1)", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -73,9 +73,9 @@ namespace Inventory_System.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap _403017_avatar_default_head_person_unknown_icon {
+        internal static System.Drawing.Bitmap WhatsApp_Image_2021_10_26_at_7_42_00_PM {
             get {
-                object obj = ResourceManager.GetObject("403017_avatar_default_head_person_unknown_icon", resourceCulture);
+                object obj = ResourceManager.GetObject("WhatsApp Image 2021-10-26 at 7.42.00 PM", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
