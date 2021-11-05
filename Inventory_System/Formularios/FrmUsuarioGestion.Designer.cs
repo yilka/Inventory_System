@@ -176,6 +176,7 @@ namespace Inventory_System.Formularios
             this.TxtPass.Name = "TxtPass";
             this.TxtPass.Size = new System.Drawing.Size(198, 29);
             this.TxtPass.TabIndex = 17;
+            this.TxtPass.TextChanged += new System.EventHandler(this.TxtPass_TextChanged);
             // 
             // CboxTipoUsuario
             // 
@@ -285,7 +286,10 @@ namespace Inventory_System.Formularios
             this.TxtCedula.Size = new System.Drawing.Size(198, 29);
             this.TxtCedula.TabIndex = 4;
             this.TxtCedula.Tag = "Requerido";
+            this.TxtCedula.TextChanged += new System.EventHandler(this.TxtCedula_TextChanged);
+            this.TxtCedula.Enter += new System.EventHandler(this.TxtCedula_Enter);
             this.TxtCedula.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtCedula_KeyPress);
+            this.TxtCedula.Leave += new System.EventHandler(this.TxtCedula_Leave);
             // 
             // label2
             // 
@@ -349,6 +353,7 @@ namespace Inventory_System.Formularios
             this.BtnEditar.TabIndex = 3;
             this.BtnEditar.Text = "Editar";
             this.BtnEditar.UseVisualStyleBackColor = false;
+            this.BtnEditar.Click += new System.EventHandler(this.BtnEditar_Click);
             // 
             // BtnEliminar
             // 
@@ -362,6 +367,7 @@ namespace Inventory_System.Formularios
             this.BtnEliminar.TabIndex = 4;
             this.BtnEliminar.Text = "Eliminar";
             this.BtnEliminar.UseVisualStyleBackColor = false;
+            this.BtnEliminar.Click += new System.EventHandler(this.BtnEliminar_Click);
             // 
             // BtnLimpiar
             // 
@@ -410,10 +416,13 @@ namespace Inventory_System.Formularios
             this.TxtBuscar.Name = "TxtBuscar";
             this.TxtBuscar.Size = new System.Drawing.Size(791, 29);
             this.TxtBuscar.TabIndex = 8;
+            this.TxtBuscar.TextChanged += new System.EventHandler(this.TxtBuscar_TextChanged);
             // 
             // CbVerUsuariosActivos
             // 
             this.CbVerUsuariosActivos.AutoSize = true;
+            this.CbVerUsuariosActivos.Checked = true;
+            this.CbVerUsuariosActivos.CheckState = System.Windows.Forms.CheckState.Checked;
             this.CbVerUsuariosActivos.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CbVerUsuariosActivos.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.CbVerUsuariosActivos.Location = new System.Drawing.Point(1026, 48);

@@ -10,5 +10,7 @@ namespace Inventory_System.Locales
 
         public static Formularios.FrmUsuarioGestion MiFormGestionUsuarios = new Formularios.FrmUsuarioGestion();
 
+        public static Formularios.FrmProveedorGestion MiFormGestionProveedores = new Formularios.FrmProveedorGestion();
+
     }
 }

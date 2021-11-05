@@ -69,6 +69,38 @@ namespace Logic_Inventory
         public bool Editar()
         {
             bool R = false;
+
+            try
+            {
+                Conexion MiCnn = new Conexion();
+                MiCnn.ListadoDeParametros.Add(new SqlParameter("@Id", this.ID_Usuario));
+                MiCnn.ListadoDeParametros.Add(new SqlParameter("@Nombre", this.Nombre));
+                MiCnn.ListadoDeParametros.Add(new SqlParameter("@Telefono", this.Telefono));
+                MiCnn.ListadoDeParametros.Add(new SqlParameter("@Direccion", this.Direccion));
+                MiCnn.ListadoDeParametros.Add(new SqlParameter("@Email", this.Email));
+                MiCnn.ListadoDeParametros.Add(new SqlParameter("@UserName", this.UserName));
+                MiCnn.ListadoDeParametros.Add(new SqlParameter("@IDRol", this.Rol.ID_Rol));
+              
+
+                Crypto MiEncriptador = new Crypto();
+                string PasswordEncriptado = "";
+
+                if (!string.IsNullOrEmpty(this.Contrasena))
+                {
+                    PasswordEncriptado = MiEncriptador.EncriptarEnUnSentido(this.Contrasena);
+                }
+                MiCnn.ListadoDeParametros.Add(new SqlParameter("@Pass", PasswordEncriptado));
+                int retorno = MiCnn.DMLUpdateDeleteInsert("SPUsuarioEditar");
+
+                if(retorno > 0)
+                {
+                    R = true;
+                }
+            }
+            catch (Exception)
+            {
+                throw;
+            }
             return R;
         }
 
@@ -151,6 +183,22 @@ namespace Logic_Inventory
         public bool ConsultarPorID()
         {
             bool R = false;
+
+            try
+            {
+                Conexion MyCnn = new Conexion();
+                MyCnn.ListadoDeParametros.Add(new SqlParameter("@Id", this.ID_Usuario));
+                DataTable retorno = MyCnn.DMLSelect("SPUsuarioConsultarPorID");
+
+                if(retorno.Rows.Count > 0)
+                {
+                    R = true;
+                }
+            }
+            catch (Exception)
+            {
+                throw;
+            }
             return R;
         }
 
@@ -237,7 +285,7 @@ namespace Logic_Inventory
 
             Conexion MyCnn = new Conexion();
 
-            MyCnn.ListadoDeParametros.Add(new SqlParameter("@User", this.Email));
+            MyCnn.ListadoDeParametros.Add(new SqlParameter("@User", this.UserName));
             MyCnn.ListadoDeParametros.Add(new SqlParameter("@Pass", PasswordEncriptado));
 
             DataTable respuesta = MyCnn.DMLSelect("SPUsuarioValidarLogin");

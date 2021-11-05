@@ -16,8 +16,8 @@ namespace Inventory_System.Formularios
 
         public DataTable ListaUsuariosNormal { get; set; }
         public DataTable ListaUsuariosConFiltro { get; set; }
-
         private bool FlagActivar { get; set; }
+        private bool FlagCambioPassword { get; set; }
 
 
         public FrmUsuarioGestion()
@@ -40,10 +40,19 @@ namespace Inventory_System.Formularios
         private void LlenarListaUsuarios(bool VerActivos, string FiltroBusqueda = "")
         {
             Logic_Inventory.Usuario MiUsuario = new Logic_Inventory.Usuario();
-            DataTable Datos = new DataTable();
-            Datos = MiUsuario.ListarTodos();
-            DgvLista.DataSource = Datos;
+
+            if (!string.IsNullOrEmpty(FiltroBusqueda.Trim()))
+            {
+                ListaUsuariosConFiltro = MiUsuario.Listar(VerActivos, FiltroBusqueda);
+                DgvLista.DataSource = ListaUsuariosConFiltro;
+            }
+            else
+            {
+                ListaUsuariosNormal = MiUsuario.Listar(VerActivos);
+                DgvLista.DataSource = ListaUsuariosNormal;
+            }
             DgvLista.ClearSelection();
+
         }
 
 
@@ -107,6 +116,28 @@ namespace Inventory_System.Formularios
 
         private void DgvLista_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+            if (DgvLista.SelectedRows.Count == 1)
+            {
+                LimpiarForm();
+                DataGridViewRow MiFila = DgvLista.SelectedRows[0];
+                int ID_Usuario = Convert.ToInt32(MiFila.Cells["ColID_Usuario"].Value);
+
+                MiUsuarioLocal = new Logic_Inventory.Usuario();
+                MiUsuarioLocal = MiUsuarioLocal.Consultar(ID_Usuario);
+
+                TxtID.Text = MiUsuarioLocal.ID_Usuario.ToString();
+                TxtCedula.Text = MiUsuarioLocal.Cedula;
+                TxtNombre.Text = MiUsuarioLocal.Nombre;
+                TxtTelefono.Text = MiUsuarioLocal.Telefono;
+                TxtDireccion.Text = MiUsuarioLocal.Direccion;
+                CboxTipoUsuario.SelectedValue = MiUsuarioLocal.Rol.ID_Rol;
+                TxtEmail.Text = MiUsuarioLocal.Email;
+                TxtUserName.Text = MiUsuarioLocal.UserName;
+                //TxtPass.Text = MiUsuarioLocal.Password;
+                CbActivo.Checked = MiUsuarioLocal.Activo;
+
+                ActivarEditarYEliminar();
+            }
 
         }
 
@@ -117,12 +148,12 @@ namespace Inventory_System.Formularios
 
         private void TxtNombre_KeyPress(object sender, KeyPressEventArgs e)
         {
-            e.Handled = Herramientas.CaracteresTexto(e, true);
+            //  e.Handled = Herramientas.CaracteresTexto(e, true);
         }
 
         private void TxtEmail_KeyPress(object sender, KeyPressEventArgs e)
         {
-            e.Handled = Herramientas.CaracteresTexto(e, true);
+            // e.Handled = Herramientas.CaracteresTexto(e, true);
         }
 
         private void TxtTelefono_KeyPress(object sender, KeyPressEventArgs e)
@@ -200,7 +231,7 @@ namespace Inventory_System.Formularios
                     bool UserExiste = MiUsuario.ConsultarPorUserName();
 
 
-                    if(!CedulaExiste && !UserExiste)
+                    if (!CedulaExiste && !UserExiste)
                     {
                         if (MiUsuario.Agregar())
                         {
@@ -230,8 +261,118 @@ namespace Inventory_System.Formularios
             }
         }
 
+        private void TxtCedula_TextChanged(object sender, EventArgs e)
+        {
+            TxtCedula.ForeColor = Color.DarkGray;
+            if (TxtCedula.Text == TxtCedula.Tag.ToString())
+            {
+                TxtCedula.ForeColor = Color.LightGray;
+            }
+        }
 
+        private void TxtCedula_Enter(object sender, EventArgs e)
+        {
+            if (TxtCedula.Text == TxtCedula.Tag.ToString())
+            {
+                TxtCedula.Clear();
+            }
+        }
 
+        private void TxtCedula_Leave(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(TxtCedula.Text.Trim()))
+            {
+                TxtCedula.Text = TxtCedula.Tag.ToString();
+            }
+        }
+
+        private void TxtBuscar_TextChanged(object sender, EventArgs e)
+        {
+            if (!string.IsNullOrEmpty(TxtBuscar.Text.Trim()) && TxtBuscar.Text.Count() >= 2)
+            {
+                LlenarListaUsuarios(CbVerUsuariosActivos.Checked, TxtBuscar.Text.Trim());
+            }
+            else
+            {
+                LlenarListaUsuarios(CbVerUsuariosActivos.Checked);
+            }
+        }
+
+        private void BtnEliminar_Click(object sender, EventArgs e)
+        {
+            Logic_Inventory.Usuario MiUsuario = new Logic_Inventory.Usuario();
+            MiUsuario.ID_Usuario = Convert.ToInt32(TxtID.Text.Trim());
+
+            if (MiUsuario.ConsultarPorID())
+            {
+                if (FlagActivar)
+                {
+                    if (MiUsuario.Activar())
+                    {
+                        MessageBox.Show("Usuario activado correctamente", "", MessageBoxButtons.OK);
+                        LimpiarForm();
+                        LlenarListaUsuarios(CbVerUsuariosActivos.Checked);
+                        ActivarBotonAgregar();
+                    }
+                }
+                else
+                {
+                    if (MiUsuario.Desactivar())
+                    {
+                        MessageBox.Show("Usuario eliminado correctamente", "", MessageBoxButtons.OK);
+                        LimpiarForm();
+                        LlenarListaUsuarios(true);
+                        ActivarBotonAgregar();
+                    }
+                }
+            }
+        }
+
+        private void BtnEditar_Click(object sender, EventArgs e)
+        {
+            if (ValidarDatos())
+            {
+                Logic_Inventory.Usuario MiUsuario = new Logic_Inventory.Usuario();
+
+                MiUsuario.ID_Usuario = Convert.ToInt32(TxtID.Text.Trim());
+                MiUsuario.Cedula = TxtCedula.Text.Trim();
+                MiUsuario.Nombre = TxtNombre.Text.Trim();
+                MiUsuario.Telefono = TxtTelefono.Text.Trim();
+                MiUsuario.Direccion = TxtDireccion.Text.Trim();
+                MiUsuario.Email = TxtEmail.Text.Trim();
+                MiUsuario.UserName = TxtUserName.Text.Trim();
+                MiUsuario.Contrasena = "";
+                if (FlagCambioPassword)
+                {
+                    MiUsuario.Contrasena = TxtPass.Text.Trim();
+                }
+
+                MiUsuario.Rol.ID_Rol = Convert.ToInt32(CboxTipoUsuario.SelectedValue);
+                if(MiUsuario.ConsultarPorID())
+                {
+                    if (MiUsuario.Editar())
+                    {
+                        MessageBox.Show("Usuario editado correctamente", "", MessageBoxButtons.OK);
+                        LimpiarForm();
+                        LlenarListaUsuarios(CbVerUsuariosActivos.Checked);
+                        ActivarBotonAgregar();
+                    }
+                }
+
+            }
+        }
+
+        private void TxtPass_TextChanged(object sender, EventArgs e)
+        {
+            if(!string.IsNullOrEmpty(TxtPass.Text.Trim()) && BtnEditar.Enabled)
+            {
+                FlagCambioPassword = true;
+            }
+            else
+            {
+                FlagCambioPassword = false;
+            }
+        }
 
 
     }

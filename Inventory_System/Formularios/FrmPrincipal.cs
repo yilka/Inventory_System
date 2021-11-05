@@ -30,5 +30,30 @@ namespace Inventory_System.Formularios
                 Locales.ObjetosGlobales.MiFormGestionUsuarios.Show();
             }
         }
+
+        private void proveedorToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (!Locales.ObjetosGlobales.MiFormGestionProveedores.Visible)
+            {
+                Locales.ObjetosGlobales.MiFormGestionProveedores = new FrmProveedorGestion();
+                Locales.ObjetosGlobales.MiFormGestionProveedores.Show();
+            }
+        }
+
+        private void FrmPrincipal_Load(object sender, EventArgs e)
+        {
+            LblUsuario.Text = Locales.ObjetosGlobales.MiUsuarioGlobal.Nombre;
+
+            switch (Locales.ObjetosGlobales.MiUsuarioGlobal.Rol.ID_Rol)
+            {
+                case 1:
+                    break;
+
+                case 2:
+                    mantenimientosToolStripMenuItem.Visible = false;
+                    reportesToolStripMenuItem.Visible = false;
+                    break;
+            }
+        }
     }
 }
