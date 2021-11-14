@@ -47,12 +47,40 @@ namespace Inventory_System.Formularios
             switch (Locales.ObjetosGlobales.MiUsuarioGlobal.Rol.ID_Rol)
             {
                 case 1:
-                    break;
-
-                case 2:
                     mantenimientosToolStripMenuItem.Visible = false;
                     reportesToolStripMenuItem.Visible = false;
                     break;
+
+                case 2:
+                    break;
+            }
+        }
+
+        private void productoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (!Locales.ObjetosGlobales.MiFormGestionProducto.Visible)
+            {
+                Locales.ObjetosGlobales.MiFormGestionProducto = new FrmProductoGestion();
+                Locales.ObjetosGlobales.MiFormGestionProducto.Show();
+            }
+
+        }
+
+        private void materiaPrimaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (!Locales.ObjetosGlobales.MiFormGestionMateriaPrima.Visible)
+            {
+                Locales.ObjetosGlobales.MiFormGestionMateriaPrima = new FrmMateriaPrimaGestion();
+                Locales.ObjetosGlobales.MiFormGestionMateriaPrima.Show();
+            }
+        }
+
+        private void inventarioMateriaPrimaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (!Locales.ObjetosGlobales.MiFormGestionInventarioMP.Visible)
+            {
+                Locales.ObjetosGlobales.MiFormGestionInventarioMP = new FrmInventarioMP();
+                Locales.ObjetosGlobales.MiFormGestionInventarioMP.Show();
             }
         }
     }

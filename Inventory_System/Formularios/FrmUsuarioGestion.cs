@@ -246,13 +246,13 @@ namespace Inventory_System.Formularios
                     {
                         if (CedulaExiste)
                         {
-                            MessageBox.Show("La cédula ingresada ha sido usada por otro usuario", "", MessageBoxButtons.OK);
+                            MessageBox.Show("La cédula ingresada pertenece otro usuario", "", MessageBoxButtons.OK);
                             TxtCedula.Focus();
                             TxtCedula.SelectAll();
                         }
                         else if (UserExiste)
                         {
-                            MessageBox.Show("El Nombre de Usuario ingresado ya fue usado", "", MessageBoxButtons.OK);
+                            MessageBox.Show("El Nombre de Usuario ingresado se encuentra en uso", "", MessageBoxButtons.OK);
                             TxtUserName.Focus();
                             TxtUserName.SelectAll();
                         }
@@ -266,7 +266,7 @@ namespace Inventory_System.Formularios
             TxtCedula.ForeColor = Color.DarkGray;
             if (TxtCedula.Text == TxtCedula.Tag.ToString())
             {
-                TxtCedula.ForeColor = Color.LightGray;
+                TxtCedula.ForeColor = Color.White;
             }
         }
 

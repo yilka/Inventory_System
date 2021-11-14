@@ -46,17 +46,41 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Formularios\FrmInventarioMP.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\FrmInventarioMP.Designer.cs">
+      <DependentUpon>FrmInventarioMP.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\FrmLogin.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Formularios\FrmLogin.Designer.cs">
       <DependentUpon>FrmLogin.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formularios\FrmMateriaPrimaGestion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\FrmMateriaPrimaGestion.Designer.cs">
+      <DependentUpon>FrmMateriaPrimaGestion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\FrmMPDetalle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\FrmMPDetalle.Designer.cs">
+      <DependentUpon>FrmMPDetalle.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\FrmPrincipal.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Formularios\FrmPrincipal.Designer.cs">
       <DependentUpon>FrmPrincipal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\FrmProductoGestion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\FrmProductoGestion.Designer.cs">
+      <DependentUpon>FrmProductoGestion.cs</DependentUpon>
     </Compile>
     <Compile Include="Formularios\FrmProveedorGestion.cs">
       <SubType>Form</SubType>
@@ -74,11 +98,23 @@
     <Compile Include="Locales\ObjetosGlobales.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Formularios\FrmInventarioMP.resx">
+      <DependentUpon>FrmInventarioMP.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Formularios\FrmLogin.resx">
       <DependentUpon>FrmLogin.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\FrmMateriaPrimaGestion.resx">
+      <DependentUpon>FrmMateriaPrimaGestion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\FrmMPDetalle.resx">
+      <DependentUpon>FrmMPDetalle.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Formularios\FrmPrincipal.resx">
       <DependentUpon>FrmPrincipal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\FrmProductoGestion.resx">
+      <DependentUpon>FrmProductoGestion.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\FrmProveedorGestion.resx">
       <DependentUpon>FrmProveedorGestion.cs</DependentUpon>

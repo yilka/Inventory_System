@@ -110,6 +110,25 @@ namespace Inventory_System.Formularios
         }
 
 
+        private bool ValidarDatosEditar()
+        {
+            bool R = false;
+
+            if (!string.IsNullOrEmpty(TxtCedulaJ.Text.Trim()) &&
+                TxtCedulaJ.Text.Trim() != TxtCedulaJ.Tag.ToString() &&
+                !string.IsNullOrEmpty(TxtNombre.Text.Trim()) &&
+                !string.IsNullOrEmpty(TxtTelefono.Text.Trim()))
+            {
+                if (BtnEditar.Enabled)
+                {
+                    R = true;
+                }
+            }
+
+            return R;
+        }
+
+
         private void BtnAgregar_Click(object sender, EventArgs e)
         {
             if (ValidarDatos())
@@ -127,12 +146,10 @@ namespace Inventory_System.Formularios
                     MiProveedor.Email = TxtEmail.Text.Trim();
                     MiProveedor.Contacto_Directo = TxtContacto.Text.Trim();
 
-
-                    //bool IDExiste = MiProveedor.ConsultarPorID();
                     bool CedulaExiste = MiProveedor.ConsultarPorCedula();
 
 
-                    if (/*!IDExiste &&*/ !CedulaExiste)
+                    if (!CedulaExiste)
                     {
                         if (MiProveedor.Agregar())
                         {
@@ -145,13 +162,9 @@ namespace Inventory_System.Formularios
                     }
                     else
                     {
-                        //if (IDExiste)
-                        //{
-                        //    MessageBox.Show("El ID ingresado ha sido usado para otro proveedor", "", MessageBoxButtons.OK);
-                        //}
-                        /*else*/ if (CedulaExiste)
+                        if (CedulaExiste)
                         {
-                            MessageBox.Show("La cédula jurídica ingresada ha sido usada para otro proveedor", "", MessageBoxButtons.OK);
+                            MessageBox.Show("La cédula jurídica ingresada pertenece a otro proveedor", "", MessageBoxButtons.OK);
                             TxtCedulaJ.Focus();
                             TxtCedulaJ.SelectAll();
                         }
@@ -195,7 +208,7 @@ namespace Inventory_System.Formularios
             TxtCedulaJ.ForeColor = Color.DarkGray;
             if (TxtCedulaJ.Text == TxtCedulaJ.Tag.ToString())
             {
-                TxtCedulaJ.ForeColor = Color.LightGray;
+                TxtCedulaJ.ForeColor = Color.White;
             }
         }
 
@@ -227,7 +240,7 @@ namespace Inventory_System.Formularios
 
         private void BtnEditar_Click(object sender, EventArgs e)
         {
-            if (ValidarDatos())
+            if (ValidarDatosEditar())
             {
                 Logic_Inventory.Proveedor MiProveedor = new Logic_Inventory.Proveedor();
 
@@ -294,6 +307,18 @@ namespace Inventory_System.Formularios
             {
                 BtnEliminar.Text = "Activar";
                 FlagActivar = true;
+            }
+        }
+
+        private void TxtBuscar_TextChanged(object sender, EventArgs e)
+        {
+            if(!string.IsNullOrEmpty(TxtBuscar.Text.Trim()) && TxtBuscar.Text.Count() >= 2)
+            {
+                LlenarListaProveedores(CbVerProveedoresActivos.Checked, TxtBuscar.Text.Trim());
+            }
+            else
+            {
+                LlenarListaProveedores(CbVerProveedoresActivos.Checked);
             }
         }
     }

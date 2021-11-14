@@ -55,7 +55,6 @@
     <Compile Include="Perdidas.cs" />
     <Compile Include="Perdidas_Detalle.cs" />
     <Compile Include="Producto.cs" />
-    <Compile Include="ProductoXSabor.cs" />
     <Compile Include="Producto_Categoria.cs" />
     <Compile Include="Producto_Sabores.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

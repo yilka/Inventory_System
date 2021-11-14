@@ -12,5 +12,11 @@ namespace Inventory_System.Locales
 
         public static Formularios.FrmProveedorGestion MiFormGestionProveedores = new Formularios.FrmProveedorGestion();
 
+        public static Formularios.FrmProductoGestion MiFormGestionProducto = new Formularios.FrmProductoGestion();
+
+        public static Formularios.FrmMateriaPrimaGestion MiFormGestionMateriaPrima = new Formularios.FrmMateriaPrimaGestion();
+
+        public static Formularios.FrmInventarioMP MiFormGestionInventarioMP = new Formularios.FrmInventarioMP();
+
     }
 }

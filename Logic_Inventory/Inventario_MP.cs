@@ -27,6 +27,46 @@ namespace Logic_Inventory
         public bool Agregar()
         {
             bool R = false;
+
+            Conexion MyCnn = new Conexion();
+
+            MyCnn.ListadoDeParametros.Add(new SqlParameter("@Fecha", this.Fecha));
+            MyCnn.ListadoDeParametros.Add(new SqlParameter("@IdUsuario", this.MiUsuario.ID_Usuario));
+
+            Object Retorno = MyCnn.DMLConRetornoEscalar("SPInventarioMPAgregarEncabezado");
+            int IdInventarioRecienCreado;
+
+            if (Retorno != null)
+            {
+                try
+                {
+                    IdInventarioRecienCreado = Convert.ToInt32(Retorno.ToString());
+                    this.ID_InventarioMP = IdInventarioRecienCreado;
+                    int Acumulador = 0;
+
+                    foreach(MP_Detalle item in this.MPListaDetalle)
+                    {
+                        Conexion MyCnnDetalle = new Conexion();
+
+                        MyCnnDetalle.ListadoDeParametros.Add(new SqlParameter("@IdMateria", item.MiMateria.ID_Materia));
+                        MyCnnDetalle.ListadoDeParametros.Add(new SqlParameter("@IdInventarioMP", this.ID_InventarioMP));
+                        MyCnnDetalle.ListadoDeParametros.Add(new SqlParameter("@Total", item.Total));
+                        MyCnnDetalle.ListadoDeParametros.Add(new SqlParameter("@Cantidad", item.Cantidad));
+
+                        MyCnnDetalle.DMLUpdateDeleteInsert("SPInventarioMPAgregarDetalle");
+
+                        Acumulador += 1;
+                    }
+                    if(Acumulador == this.MPListaDetalle.Count)
+                    {
+                        R = true;
+                    }
+                }
+                catch (Exception)
+                {
+                    throw;
+                }
+            }
             return R;
         }
 
@@ -49,6 +89,16 @@ namespace Logic_Inventory
         {
             DataTable R = new DataTable();
             return R;
+        }
+
+
+        public DataTable AsignarEsquemaDetalle()
+        {
+            DataTable R = new DataTable();
+            Conexion MyCnn = new Conexion();
+            R = MyCnn.DMLSelect("SPMPDetalleSchema", true);
+            R.PrimaryKey = null;
+            return R; 
         }
 
     }

@@ -29,6 +29,7 @@ namespace Inventory_System.Formularios
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmPrincipal));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.mantenimientosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.usuarioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -44,8 +45,8 @@ namespace Inventory_System.Formularios
             this.reportesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.acercaDeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.LblUsuario = new System.Windows.Forms.ToolStripStatusLabel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.menuStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -90,12 +91,14 @@ namespace Inventory_System.Formularios
             this.productoToolStripMenuItem.Name = "productoToolStripMenuItem";
             this.productoToolStripMenuItem.Size = new System.Drawing.Size(211, 30);
             this.productoToolStripMenuItem.Text = "Productos";
+            this.productoToolStripMenuItem.Click += new System.EventHandler(this.productoToolStripMenuItem_Click);
             // 
             // materiaPrimaToolStripMenuItem
             // 
             this.materiaPrimaToolStripMenuItem.Name = "materiaPrimaToolStripMenuItem";
             this.materiaPrimaToolStripMenuItem.Size = new System.Drawing.Size(211, 30);
             this.materiaPrimaToolStripMenuItem.Text = "Materias Prima";
+            this.materiaPrimaToolStripMenuItem.Click += new System.EventHandler(this.materiaPrimaToolStripMenuItem_Click);
             // 
             // proveedorToolStripMenuItem
             // 
@@ -127,6 +130,7 @@ namespace Inventory_System.Formularios
             this.inventarioMateriaPrimaToolStripMenuItem.Name = "inventarioMateriaPrimaToolStripMenuItem";
             this.inventarioMateriaPrimaToolStripMenuItem.Size = new System.Drawing.Size(293, 30);
             this.inventarioMateriaPrimaToolStripMenuItem.Text = "Inventario Materia Prima";
+            this.inventarioMateriaPrimaToolStripMenuItem.Click += new System.EventHandler(this.inventarioMateriaPrimaToolStripMenuItem_Click);
             // 
             // toolStripSeparator1
             // 
@@ -162,11 +166,18 @@ namespace Inventory_System.Formularios
             this.statusStrip1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(236)))), ((int)(((byte)(238)))));
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.LblUsuario});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 557);
+            this.statusStrip1.Location = new System.Drawing.Point(0, 553);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(1103, 22);
+            this.statusStrip1.Size = new System.Drawing.Size(1103, 26);
             this.statusStrip1.TabIndex = 1;
             this.statusStrip1.Text = "statusStrip1";
+            // 
+            // LblUsuario
+            // 
+            this.LblUsuario.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblUsuario.Name = "LblUsuario";
+            this.LblUsuario.Size = new System.Drawing.Size(71, 21);
+            this.LblUsuario.Text = "Usuario: ";
             // 
             // pictureBox1
             // 
@@ -177,13 +188,7 @@ namespace Inventory_System.Formularios
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 2;
             this.pictureBox1.TabStop = false;
-            // 
-            // LblUsuario
-            // 
-            this.LblUsuario.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblUsuario.Name = "LblUsuario";
-            this.LblUsuario.Size = new System.Drawing.Size(60, 17);
-            this.LblUsuario.Text = "Usuario: ";
+            this.pictureBox1.Visible = false;
             // 
             // FrmPrincipal
             // 
@@ -196,10 +201,12 @@ namespace Inventory_System.Formularios
             this.Controls.Add(this.menuStrip1);
             this.Font = new System.Drawing.Font("Mongolian Baiti", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "FrmPrincipal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Sistema de Inventario";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FrmPrincipal_FormClosed);
             this.Load += new System.EventHandler(this.FrmPrincipal_Load);
             this.menuStrip1.ResumeLayout(false);

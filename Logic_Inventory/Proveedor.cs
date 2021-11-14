@@ -60,12 +60,10 @@ namespace Logic_Inventory
 
                 MiCnn.ListadoDeParametros.Add(new SqlParameter("@Id", this.ID_Proveedor));
                 MiCnn.ListadoDeParametros.Add(new SqlParameter("@Nombre", this.Nombre));
-                MiCnn.ListadoDeParametros.Add(new SqlParameter("@Cedula_Juridica", this.Cedula_Juridica));
                 MiCnn.ListadoDeParametros.Add(new SqlParameter("@Email", this.Email));
                 MiCnn.ListadoDeParametros.Add(new SqlParameter("@Contacto_Directo", this.Contacto_Directo));
                 MiCnn.ListadoDeParametros.Add(new SqlParameter("@Telefono", this.Telefono));
                 MiCnn.ListadoDeParametros.Add(new SqlParameter("@Direccion", this.Direccion));
-                MiCnn.ListadoDeParametros.Add(new SqlParameter("@Activo", this.Activo));
 
                 int retorno = MiCnn.DMLUpdateDeleteInsert("SPProveedorEditar");
                 if(retorno > 0)
@@ -215,6 +213,14 @@ namespace Logic_Inventory
 
         }
 
+
+        public DataTable ListarCombo()
+        {
+            DataTable R = new DataTable();
+            Conexion MyCnn = new Conexion();
+            R = MyCnn.DMLSelect("SPProveedorListarCombo");
+            return R;
+        }
 
         public DataTable ListarTodos()
         {
