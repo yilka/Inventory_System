@@ -52,6 +52,18 @@
     <Compile Include="Formularios\FrmInventarioMP.Designer.cs">
       <DependentUpon>FrmInventarioMP.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formularios\FrmInventarioPDetalle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\FrmInventarioPDetalle.Designer.cs">
+      <DependentUpon>FrmInventarioPDetalle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\FrmInventarioProducto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\FrmInventarioProducto.Designer.cs">
+      <DependentUpon>FrmInventarioProducto.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\FrmLogin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -69,6 +81,30 @@
     </Compile>
     <Compile Include="Formularios\FrmMPDetalle.Designer.cs">
       <DependentUpon>FrmMPDetalle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\FrmPedido.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\FrmPedido.Designer.cs">
+      <DependentUpon>FrmPedido.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\FrmPedidoDetalle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\FrmPedidoDetalle.Designer.cs">
+      <DependentUpon>FrmPedidoDetalle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\FrmPerdidas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\FrmPerdidas.Designer.cs">
+      <DependentUpon>FrmPerdidas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\FrmPerdidasDetalle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\FrmPerdidasDetalle.Designer.cs">
+      <DependentUpon>FrmPerdidasDetalle.cs</DependentUpon>
     </Compile>
     <Compile Include="Formularios\FrmPrincipal.cs">
       <SubType>Form</SubType>
@@ -101,6 +137,12 @@
     <EmbeddedResource Include="Formularios\FrmInventarioMP.resx">
       <DependentUpon>FrmInventarioMP.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\FrmInventarioPDetalle.resx">
+      <DependentUpon>FrmInventarioPDetalle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\FrmInventarioProducto.resx">
+      <DependentUpon>FrmInventarioProducto.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Formularios\FrmLogin.resx">
       <DependentUpon>FrmLogin.cs</DependentUpon>
     </EmbeddedResource>
@@ -109,6 +151,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\FrmMPDetalle.resx">
       <DependentUpon>FrmMPDetalle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\FrmPedido.resx">
+      <DependentUpon>FrmPedido.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\FrmPedidoDetalle.resx">
+      <DependentUpon>FrmPedidoDetalle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\FrmPerdidas.resx">
+      <DependentUpon>FrmPerdidas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\FrmPerdidasDetalle.resx">
+      <DependentUpon>FrmPerdidasDetalle.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\FrmPrincipal.resx">
       <DependentUpon>FrmPrincipal.cs</DependentUpon>

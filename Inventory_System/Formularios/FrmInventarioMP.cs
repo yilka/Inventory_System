@@ -14,13 +14,13 @@ namespace Inventory_System.Formularios
     {
 
         public Logic_Inventory.Inventario_MP MiInventarioMPLocal { get; set; }
-        public DataTable DtListarMaterias { get; set; }
+        public DataTable DtListaMaterias { get; set; }
 
         public FrmInventarioMP()
         {
             InitializeComponent();
             MiInventarioMPLocal = new Logic_Inventory.Inventario_MP();
-            DtListarMaterias = new DataTable();
+            DtListaMaterias = new DataTable();
         }
 
         private void FrmInventarioMP_Load(object sender, EventArgs e)
@@ -33,9 +33,8 @@ namespace Inventory_System.Formularios
         private void Limpiar()
         {
             DtpFecha.Value = DateTime.Now.Date;
-            TxtID.Clear();
-            DtListarMaterias = MiInventarioMPLocal.AsignarEsquemaDetalle();
-            DgvListaMaterias.DataSource = DtListarMaterias;
+            DtListaMaterias = MiInventarioMPLocal.AsignarEsquemaDetalle();
+            DgvListaMaterias.DataSource = DtListaMaterias;
             TxtTotal.Text = "0";
         }
 
@@ -45,7 +44,7 @@ namespace Inventory_System.Formularios
             DialogResult Resp = FormBuscarItem.ShowDialog();
             if (Resp == DialogResult.OK)
             {
-                DgvListaMaterias.DataSource = DtListarMaterias;
+                DgvListaMaterias.DataSource = DtListaMaterias;
                 TxtTotal.Text = string.Format("{0:C2}", Totalizar());
             }
         }
@@ -53,9 +52,9 @@ namespace Inventory_System.Formularios
         private decimal Totalizar()
         {
             decimal R = 0;
-            if(DtListarMaterias.Rows.Count > 0)
+            if(DtListaMaterias.Rows.Count > 0)
             {
-                foreach(DataRow item in DtListarMaterias.Rows)
+                foreach(DataRow item in DtListaMaterias.Rows)
                 {
                     R += Convert.ToDecimal(item["Cantidad"]) * Convert.ToDecimal(item["Total"]);
                 }
@@ -69,18 +68,84 @@ namespace Inventory_System.Formularios
         }
 
 
-        //private bool ValidarInventario()
-        //{
-        //    bool R = false;
+        private bool ValidarInventario()
+        {
+            bool R = false;
 
-        //    if(DtpFecha.Value.Date <= DateTime.Now.Date &&
-        //        )
-        //}
+            if (DtpFecha.Value.Date <= DateTime.Now.Date &&
+                DtListaMaterias.Rows.Count > 0)
+            {
+                R = true;
+            }
+            else
+            {
+                if (DtpFecha.Value.Date > DateTime.Now.Date)
+                {
+                    MessageBox.Show(@"La fecha del inventario no puede ser superior a la fecha actual", "Error de validación", MessageBoxButtons.OK);
+                    return false;
+                }
+            }
+            return R;
+        }
 
 
         private void BtnCrearInventario_Click(object sender, EventArgs e)
         {
+            if (ValidarInventario())
+            {
+                MiInventarioMPLocal.Fecha = DtpFecha.Value.Date;
+                MiInventarioMPLocal.MiUsuario.ID_Usuario = Locales.ObjetosGlobales.MiUsuarioGlobal.ID_Usuario;
 
+                LlenarDetalleInventario();
+
+                if (MiInventarioMPLocal.Agregar())
+                {
+                    MessageBox.Show("El inventario se realizó correctamente", "", MessageBoxButtons.OK);
+                    //ReportDocument MiReporteFactura = new ReportDocument();
+
+                    //MiReporteFactura = new Reportes.RptFactura();
+
+                    //MiReporteFactura = MiFacturaLocal.Imprimir(MiReporteFactura);
+
+                    //FrmVisualizadorReportes MiFormCRV = new FrmVisualizadorReportes();
+
+                    //MiFormCRV.CrvVisualizadorReportes.ReportSource = MiReporteFactura;
+
+                    //MiFormCRV.Show();
+
+
+                    //MiFormCRV.CrvVisualizadorReportes.Zoom(1);
+
+
+                    Limpiar();
+                }
+
+            }
+
+        }
+
+
+        private void LlenarDetalleInventario()
+        {
+            foreach(DataRow fila in DtListaMaterias.Rows)
+            {
+                Logic_Inventory.MP_Detalle detalle = new Logic_Inventory.MP_Detalle();
+
+                detalle.MiMateria.ID_Materia = Convert.ToInt32(fila["ID_Materia"]);
+                detalle.Cantidad = Convert.ToInt32(fila["Cantidad"]);
+                detalle.Total = Convert.ToDecimal(fila["Total"]);
+                detalle.MiMateria.Nombre = fila["Nombre"].ToString();
+
+                MiInventarioMPLocal.MPListaDetalle.Add(detalle);
+            }
+        }
+
+        private void BtnEliminarMateria_Click(object sender, EventArgs e)
+        {
+            int num = Locales.ObjetosGlobales.MiFormGestionInventarioMP.DgvListaMaterias.SelectedRows[0].Index;
+            Locales.ObjetosGlobales.MiFormGestionInventarioMP.DtListaMaterias.Rows.RemoveAt(num);
+            MessageBox.Show("Materia Prima eliminada de la lista");
+            TxtTotal.Text = string.Format("{0:C2}", Totalizar());
         }
     }
 }

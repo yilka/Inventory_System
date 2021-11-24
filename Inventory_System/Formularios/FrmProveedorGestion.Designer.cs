@@ -56,12 +56,12 @@ namespace Inventory_System.Formularios
             this.label1 = new System.Windows.Forms.Label();
             this.TxtID = new System.Windows.Forms.TextBox();
             this.DgvLista = new System.Windows.Forms.DataGridView();
-            this.CbVerProveedoresActivos = new System.Windows.Forms.CheckBox();
             this.ColID_Proveedor = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColCedula_Juridica = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColNombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColContacto_Directo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColTelefono = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CbVerProveedoresActivos = new System.Windows.Forms.CheckBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DgvLista)).BeginInit();
             this.SuspendLayout();
@@ -359,21 +359,6 @@ namespace Inventory_System.Formularios
             this.DgvLista.VirtualMode = true;
             this.DgvLista.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvLista_CellClick);
             // 
-            // CbVerProveedoresActivos
-            // 
-            this.CbVerProveedoresActivos.AutoSize = true;
-            this.CbVerProveedoresActivos.Checked = true;
-            this.CbVerProveedoresActivos.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.CbVerProveedoresActivos.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CbVerProveedoresActivos.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.CbVerProveedoresActivos.Location = new System.Drawing.Point(995, 42);
-            this.CbVerProveedoresActivos.Name = "CbVerProveedoresActivos";
-            this.CbVerProveedoresActivos.Size = new System.Drawing.Size(190, 22);
-            this.CbVerProveedoresActivos.TabIndex = 19;
-            this.CbVerProveedoresActivos.Text = "Ver Proveedores Activos";
-            this.CbVerProveedoresActivos.UseVisualStyleBackColor = true;
-            this.CbVerProveedoresActivos.CheckedChanged += new System.EventHandler(this.CbVerProveedoresActivos_CheckedChanged);
-            // 
             // ColID_Proveedor
             // 
             this.ColID_Proveedor.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
@@ -415,6 +400,21 @@ namespace Inventory_System.Formularios
             this.ColTelefono.ReadOnly = true;
             this.ColTelefono.Width = 250;
             // 
+            // CbVerProveedoresActivos
+            // 
+            this.CbVerProveedoresActivos.AutoSize = true;
+            this.CbVerProveedoresActivos.Checked = true;
+            this.CbVerProveedoresActivos.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.CbVerProveedoresActivos.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CbVerProveedoresActivos.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.CbVerProveedoresActivos.Location = new System.Drawing.Point(995, 42);
+            this.CbVerProveedoresActivos.Name = "CbVerProveedoresActivos";
+            this.CbVerProveedoresActivos.Size = new System.Drawing.Size(190, 22);
+            this.CbVerProveedoresActivos.TabIndex = 19;
+            this.CbVerProveedoresActivos.Text = "Ver Proveedores Activos";
+            this.CbVerProveedoresActivos.UseVisualStyleBackColor = true;
+            this.CbVerProveedoresActivos.CheckedChanged += new System.EventHandler(this.CbVerProveedoresActivos_CheckedChanged);
+            // 
             // FrmProveedorGestion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -431,6 +431,7 @@ namespace Inventory_System.Formularios
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.DgvLista);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "FrmProveedorGestion";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Gestión de Proveedor";

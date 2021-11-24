@@ -31,7 +31,7 @@ namespace Logic_Inventory
             Conexion MyCnn = new Conexion();
 
             MyCnn.ListadoDeParametros.Add(new SqlParameter("@Fecha", this.Fecha));
-            MyCnn.ListadoDeParametros.Add(new SqlParameter("@IdUsuario", this.MiUsuario.ID_Usuario));
+            MyCnn.ListadoDeParametros.Add(new SqlParameter("@ID_Usuario", this.MiUsuario.ID_Usuario));
 
             Object Retorno = MyCnn.DMLConRetornoEscalar("SPInventarioMPAgregarEncabezado");
             int IdInventarioRecienCreado;
@@ -44,12 +44,12 @@ namespace Logic_Inventory
                     this.ID_InventarioMP = IdInventarioRecienCreado;
                     int Acumulador = 0;
 
-                    foreach(MP_Detalle item in this.MPListaDetalle)
+                    foreach (MP_Detalle item in this.MPListaDetalle)
                     {
                         Conexion MyCnnDetalle = new Conexion();
 
-                        MyCnnDetalle.ListadoDeParametros.Add(new SqlParameter("@IdMateria", item.MiMateria.ID_Materia));
-                        MyCnnDetalle.ListadoDeParametros.Add(new SqlParameter("@IdInventarioMP", this.ID_InventarioMP));
+                        MyCnnDetalle.ListadoDeParametros.Add(new SqlParameter("@ID_Materia", item.MiMateria.ID_Materia));
+                        MyCnnDetalle.ListadoDeParametros.Add(new SqlParameter("@ID_InventarioMP", this.ID_InventarioMP));
                         MyCnnDetalle.ListadoDeParametros.Add(new SqlParameter("@Total", item.Total));
                         MyCnnDetalle.ListadoDeParametros.Add(new SqlParameter("@Cantidad", item.Cantidad));
 
@@ -57,7 +57,7 @@ namespace Logic_Inventory
 
                         Acumulador += 1;
                     }
-                    if(Acumulador == this.MPListaDetalle.Count)
+                    if (Acumulador == this.MPListaDetalle.Count)
                     {
                         R = true;
                     }

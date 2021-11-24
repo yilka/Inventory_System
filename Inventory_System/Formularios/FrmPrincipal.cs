@@ -83,5 +83,34 @@ namespace Inventory_System.Formularios
                 Locales.ObjetosGlobales.MiFormGestionInventarioMP.Show();
             }
         }
+
+        private void inventarioProductosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (!Locales.ObjetosGlobales.MiFormGestionInventarioProducto.Visible)
+            {
+                Locales.ObjetosGlobales.MiFormGestionInventarioProducto = new FrmInventarioProducto();
+                Locales.ObjetosGlobales.MiFormGestionInventarioProducto.Show();
+            }
+
+        }
+
+        private void perdidasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (!Locales.ObjetosGlobales.MiFormGestionPerdidas.Visible)
+            {
+                Locales.ObjetosGlobales.MiFormGestionPerdidas = new FrmPerdidas();
+                Locales.ObjetosGlobales.MiFormGestionPerdidas.Show();
+            }
+
+        }
+
+        private void pedidosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (!Locales.ObjetosGlobales.MiFormGestionPedido.Visible)
+            {
+                Locales.ObjetosGlobales.MiFormGestionPedido = new FrmPedido();
+                Locales.ObjetosGlobales.MiFormGestionPedido.Show();
+            }
+        }
     }
 }

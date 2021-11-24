@@ -458,6 +458,7 @@ namespace Inventory_System.Formularios
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.DgvLista);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "FrmProductoGestion";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Gestión de Producto";

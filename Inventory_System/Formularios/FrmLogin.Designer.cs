@@ -36,8 +36,8 @@ namespace Inventory_System.Formularios
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.BtnVerPass = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.BtnVerPass = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -80,6 +80,7 @@ namespace Inventory_System.Formularios
             // BtnCancelar
             // 
             this.BtnCancelar.BackColor = System.Drawing.Color.MediumSeaGreen;
+            this.BtnCancelar.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.BtnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnCancelar.Font = new System.Drawing.Font("Mongolian Baiti", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnCancelar.ForeColor = System.Drawing.SystemColors.ButtonFace;
@@ -124,6 +125,16 @@ namespace Inventory_System.Formularios
             this.panel1.Size = new System.Drawing.Size(430, 515);
             this.panel1.TabIndex = 8;
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::Inventory_System.Properties.Resources._403017_avatar_default_head_person_unknown_icon__1_;
+            this.pictureBox1.Location = new System.Drawing.Point(135, 20);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(166, 145);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
+            // 
             // BtnVerPass
             // 
             this.BtnVerPass.BackColor = System.Drawing.Color.MintCream;
@@ -140,21 +151,13 @@ namespace Inventory_System.Formularios
             this.BtnVerPass.MouseDown += new System.Windows.Forms.MouseEventHandler(this.BtnVerPass_MouseDown);
             this.BtnVerPass.MouseUp += new System.Windows.Forms.MouseEventHandler(this.BtnVerPass_MouseUp);
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::Inventory_System.Properties.Resources._403017_avatar_default_head_person_unknown_icon__1_;
-            this.pictureBox1.Location = new System.Drawing.Point(135, 20);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(166, 145);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
-            // 
             // FrmLogin
             // 
+            this.AcceptButton = this.BtnIngresar;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.SeaGreen;
+            this.CancelButton = this.BtnCancelar;
             this.ClientSize = new System.Drawing.Size(454, 539);
             this.Controls.Add(this.BtnVerPass);
             this.Controls.Add(this.label2);

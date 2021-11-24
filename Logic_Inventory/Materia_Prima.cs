@@ -225,5 +225,14 @@ namespace Logic_Inventory
 
         }
 
+
+        public DataTable ListarEnDetalle()
+        {
+            DataTable R = new DataTable();
+            Conexion MyCnn = new Conexion();
+            R = MyCnn.DMLSelect("SPMateriaListarEnDetalle");
+            return R;
+        }
+
     }
 }

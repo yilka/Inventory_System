@@ -124,6 +124,7 @@ namespace Inventory_System.Formularios
             this.inventarioProductosToolStripMenuItem.Name = "inventarioProductosToolStripMenuItem";
             this.inventarioProductosToolStripMenuItem.Size = new System.Drawing.Size(293, 30);
             this.inventarioProductosToolStripMenuItem.Text = "Inventario Productos";
+            this.inventarioProductosToolStripMenuItem.Click += new System.EventHandler(this.inventarioProductosToolStripMenuItem_Click);
             // 
             // inventarioMateriaPrimaToolStripMenuItem
             // 
@@ -142,12 +143,14 @@ namespace Inventory_System.Formularios
             this.perdidasToolStripMenuItem.Name = "perdidasToolStripMenuItem";
             this.perdidasToolStripMenuItem.Size = new System.Drawing.Size(293, 30);
             this.perdidasToolStripMenuItem.Text = "Pérdidas";
+            this.perdidasToolStripMenuItem.Click += new System.EventHandler(this.perdidasToolStripMenuItem_Click);
             // 
             // pedidosToolStripMenuItem
             // 
             this.pedidosToolStripMenuItem.Name = "pedidosToolStripMenuItem";
             this.pedidosToolStripMenuItem.Size = new System.Drawing.Size(293, 30);
             this.pedidosToolStripMenuItem.Text = "Pedidos";
+            this.pedidosToolStripMenuItem.Click += new System.EventHandler(this.pedidosToolStripMenuItem_Click);
             // 
             // reportesToolStripMenuItem
             // 

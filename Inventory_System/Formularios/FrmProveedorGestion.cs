@@ -76,10 +76,6 @@ namespace Inventory_System.Formularios
             }
             DgvLista.ClearSelection();
 
-            //Logic_Inventory.Proveedor MiProveedor = new Logic_Inventory.Proveedor();
-            //DataTable Datos = new DataTable();
-            //Datos = MiProveedor.ListarTodos();
-            //DgvLista.DataSource = Datos;
 
         }
 

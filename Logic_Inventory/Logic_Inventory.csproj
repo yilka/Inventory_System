@@ -44,6 +44,7 @@
   <ItemGroup>
     <Compile Include="Conexion.cs" />
     <Compile Include="Crypto.cs" />
+    <Compile Include="Crystal.cs" />
     <Compile Include="Inventario_MP.cs" />
     <Compile Include="Inventario_Producto.cs" />
     <Compile Include="Inv_Prod_Detalle.cs" />
