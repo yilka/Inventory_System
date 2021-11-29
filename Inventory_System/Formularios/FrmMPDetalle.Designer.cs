@@ -29,6 +29,8 @@ namespace Inventory_System.Formularios
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmMPDetalle));
             this.DgvListaMaterias = new System.Windows.Forms.DataGridView();
             this.ColID_Materia = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -50,12 +52,28 @@ namespace Inventory_System.Formularios
             this.DgvListaMaterias.AllowUserToAddRows = false;
             this.DgvListaMaterias.AllowUserToDeleteRows = false;
             this.DgvListaMaterias.BackgroundColor = System.Drawing.Color.Gainsboro;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.InactiveCaption;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DgvListaMaterias.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.DgvListaMaterias.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DgvListaMaterias.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ColID_Materia,
             this.ColNombre,
             this.ColCantidadEnStock,
             this.ColPrecio});
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.InactiveCaption;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.DgvListaMaterias.DefaultCellStyle = dataGridViewCellStyle2;
             this.DgvListaMaterias.Location = new System.Drawing.Point(13, 54);
             this.DgvListaMaterias.Name = "DgvListaMaterias";
             this.DgvListaMaterias.ReadOnly = true;
@@ -85,7 +103,7 @@ namespace Inventory_System.Formularios
             this.ColCantidadEnStock.HeaderText = "Cantidad Almacenada";
             this.ColCantidadEnStock.Name = "ColCantidadEnStock";
             this.ColCantidadEnStock.ReadOnly = true;
-            this.ColCantidadEnStock.Width = 150;
+            this.ColCantidadEnStock.Width = 220;
             // 
             // ColPrecio
             // 
@@ -126,11 +144,11 @@ namespace Inventory_System.Formularios
             // 
             // BtnAceptar
             // 
-            this.BtnAceptar.BackColor = System.Drawing.Color.Peru;
+            this.BtnAceptar.BackColor = System.Drawing.Color.SeaGreen;
             this.BtnAceptar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnAceptar.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnAceptar.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.BtnAceptar.Location = new System.Drawing.Point(163, 611);
+            this.BtnAceptar.Location = new System.Drawing.Point(162, 595);
             this.BtnAceptar.Name = "BtnAceptar";
             this.BtnAceptar.Size = new System.Drawing.Size(281, 40);
             this.BtnAceptar.TabIndex = 2;
@@ -140,11 +158,11 @@ namespace Inventory_System.Formularios
             // 
             // BtnCancelar
             // 
-            this.BtnCancelar.BackColor = System.Drawing.Color.Sienna;
+            this.BtnCancelar.BackColor = System.Drawing.Color.DarkOliveGreen;
             this.BtnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnCancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnCancelar.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.BtnCancelar.Location = new System.Drawing.Point(489, 611);
+            this.BtnCancelar.Location = new System.Drawing.Point(488, 595);
             this.BtnCancelar.Name = "BtnCancelar";
             this.BtnCancelar.Size = new System.Drawing.Size(281, 40);
             this.BtnCancelar.TabIndex = 3;

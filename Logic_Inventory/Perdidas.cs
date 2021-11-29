@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data;
 using System.Data.SqlClient;
+using CrystalDecisions.CrystalReports.Engine;
 
 
 namespace Logic_Inventory
@@ -24,6 +25,33 @@ namespace Logic_Inventory
             MiUsuario = new Usuario();
             PerdListaDetalle = new List<Perdidas_Detalle>();
         }
+
+
+
+        public ReportDocument Imprimir(ReportDocument repo)
+        {
+            ReportDocument R = repo;
+
+            Crystal ObjCrytal = new Crystal(R);
+
+            DataTable Datos = new DataTable();
+
+            Conexion MiCnn = new Conexion();
+
+            MiCnn.ListadoDeParametros.Add(new SqlParameter("@ID", this.ID_Perdida));
+
+            Datos = MiCnn.DMLSelect("SPPerdidaReporte");
+
+            if (Datos != null && Datos.Rows.Count > 0)
+            {
+                ObjCrytal.Datos = Datos;
+
+                R = ObjCrytal.GenerarReporte();
+            }
+
+            return R;
+        }
+
 
 
         public bool Agregar()
@@ -57,6 +85,9 @@ namespace Logic_Inventory
                         MyCnnDetalle.ListadoDeParametros.Add(new SqlParameter("@Cantidad", item.Cantidad));
 
                         MyCnnDetalle.DMLUpdateDeleteInsert("SPPerdidaAgregarDetalle");
+
+                        Producto MiProd = new Producto();
+                        MiProd.RestarAStock(item.MiProducto.ID_Producto, item.Cantidad);
 
                         Acumulador += 1;
                     }

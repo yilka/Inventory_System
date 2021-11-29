@@ -59,6 +59,31 @@ namespace Logic_Inventory
             return R;
         }
 
+        public bool SumarAStock(int IdMateria, int Cantidad)
+        {
+            bool R = false;
+            try
+            {
+                Conexion MiCnn = new Conexion();
+
+                MiCnn.ListadoDeParametros.Add(new SqlParameter("@Id", IdMateria));
+                MiCnn.ListadoDeParametros.Add(new SqlParameter("@Cant", Cantidad));
+               
+
+
+                int retorno = MiCnn.DMLUpdateDeleteInsert("SPMateriaSumarStock");
+                if (retorno > 0)
+                {
+                    R = true;
+                }
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+
+            return R;
+        }
 
         public bool Editar()
         {

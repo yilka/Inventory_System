@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using CrystalDecisions.CrystalReports.Engine;
 
 namespace Inventory_System.Formularios
 {
@@ -101,20 +102,21 @@ namespace Inventory_System.Formularios
                 if (MiInventarioMPLocal.Agregar())
                 {
                     MessageBox.Show("El inventario se realizó correctamente", "", MessageBoxButtons.OK);
-                    //ReportDocument MiReporteFactura = new ReportDocument();
 
-                    //MiReporteFactura = new Reportes.RptFactura();
+                    ReportDocument MiReporteInventarioMP = new ReportDocument();
 
-                    //MiReporteFactura = MiFacturaLocal.Imprimir(MiReporteFactura);
+                    MiReporteInventarioMP = new Reportes.RptInventarioMP();
 
-                    //FrmVisualizadorReportes MiFormCRV = new FrmVisualizadorReportes();
+                    MiReporteInventarioMP = MiInventarioMPLocal.Imprimir(MiReporteInventarioMP);
 
-                    //MiFormCRV.CrvVisualizadorReportes.ReportSource = MiReporteFactura;
+                    FrmVisualizadorReportes MiFormCRV = new FrmVisualizadorReportes();
 
-                    //MiFormCRV.Show();
+                    MiFormCRV.CrvVisualizador.ReportSource = MiReporteInventarioMP;
+
+                    MiFormCRV.Show();
 
 
-                    //MiFormCRV.CrvVisualizadorReportes.Zoom(1);
+                    MiFormCRV.CrvVisualizador.Zoom(1);
 
 
                     Limpiar();

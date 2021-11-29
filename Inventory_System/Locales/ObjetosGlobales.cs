@@ -6,6 +6,8 @@ namespace Inventory_System.Locales
     {
         public static Form MiFormPrincipal = new Formularios.FrmPrincipal();
 
+        public static Form MiLogin = new Formularios.FrmLogin();
+
         public static Logic_Inventory.Usuario MiUsuarioGlobal = new Logic_Inventory.Usuario();
 
         public static Formularios.FrmUsuarioGestion MiFormGestionUsuarios = new Formularios.FrmUsuarioGestion();

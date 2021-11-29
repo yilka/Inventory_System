@@ -29,6 +29,8 @@ namespace Inventory_System.Formularios
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmInventarioProducto));
             this.BtnCancelar = new System.Windows.Forms.Button();
             this.BtnCrearInventario = new System.Windows.Forms.Button();
@@ -55,7 +57,7 @@ namespace Inventory_System.Formularios
             // 
             // BtnCancelar
             // 
-            this.BtnCancelar.BackColor = System.Drawing.Color.Sienna;
+            this.BtnCancelar.BackColor = System.Drawing.Color.DarkOliveGreen;
             this.BtnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnCancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnCancelar.ForeColor = System.Drawing.SystemColors.ControlLightLight;
@@ -69,7 +71,7 @@ namespace Inventory_System.Formularios
             // 
             // BtnCrearInventario
             // 
-            this.BtnCrearInventario.BackColor = System.Drawing.Color.Peru;
+            this.BtnCrearInventario.BackColor = System.Drawing.Color.SeaGreen;
             this.BtnCrearInventario.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnCrearInventario.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnCrearInventario.ForeColor = System.Drawing.SystemColors.ControlLightLight;
@@ -119,12 +121,28 @@ namespace Inventory_System.Formularios
             this.DgvListaProductos.AllowUserToAddRows = false;
             this.DgvListaProductos.AllowUserToDeleteRows = false;
             this.DgvListaProductos.BackgroundColor = System.Drawing.Color.Gainsboro;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.InactiveCaption;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DgvListaProductos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.DgvListaProductos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DgvListaProductos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ColID_Producto,
             this.ColNombre,
             this.ColCantidad,
             this.ColTotal});
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.InactiveCaption;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.DgvListaProductos.DefaultCellStyle = dataGridViewCellStyle2;
             this.DgvListaProductos.Location = new System.Drawing.Point(6, 62);
             this.DgvListaProductos.MultiSelect = false;
             this.DgvListaProductos.Name = "DgvListaProductos";
@@ -166,7 +184,7 @@ namespace Inventory_System.Formularios
             // 
             // BtnEliminarProducto
             // 
-            this.BtnEliminarProducto.BackColor = System.Drawing.Color.BurlyWood;
+            this.BtnEliminarProducto.BackColor = System.Drawing.Color.MediumSeaGreen;
             this.BtnEliminarProducto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnEliminarProducto.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnEliminarProducto.ForeColor = System.Drawing.SystemColors.ControlLightLight;
@@ -180,7 +198,7 @@ namespace Inventory_System.Formularios
             // 
             // BtnAgregarProducto
             // 
-            this.BtnAgregarProducto.BackColor = System.Drawing.Color.Tan;
+            this.BtnAgregarProducto.BackColor = System.Drawing.Color.DarkSeaGreen;
             this.BtnAgregarProducto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnAgregarProducto.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnAgregarProducto.ForeColor = System.Drawing.SystemColors.ControlLightLight;

@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using CrystalDecisions.CrystalReports.Engine;
+
 
 namespace Inventory_System.Formularios
 {
@@ -36,6 +38,7 @@ namespace Inventory_System.Formularios
         private void Limpiar()
         {
             DtpFecha.Value = DateTime.Now.Date;
+            TxtDetalle.Text = "";
             DtListaProductos = MiPerdidaLocal.AsignarEsquemaDetalle();
             DgvListaProductos.DataSource = DtListaProductos;
             TxtTotal.Text = "0";
@@ -126,6 +129,21 @@ namespace Inventory_System.Formularios
                 if (MiPerdidaLocal.Agregar())
                 {
                     MessageBox.Show("La pérdida se realizó correctamente", "", MessageBoxButtons.OK);
+
+                    ReportDocument MiReportePerdida = new ReportDocument();
+
+                    MiReportePerdida = new Reportes.RptPerdida();
+
+                    MiReportePerdida = MiPerdidaLocal.Imprimir(MiReportePerdida);
+
+                    FrmVisualizadorReportes MiFormCRV = new FrmVisualizadorReportes();
+
+                    MiFormCRV.CrvVisualizador.ReportSource = MiReportePerdida;
+
+                    MiFormCRV.Show();
+
+
+                    MiFormCRV.CrvVisualizador.Zoom(1);
                     Limpiar();
                 }
 

@@ -112,5 +112,11 @@ namespace Inventory_System.Formularios
                 Locales.ObjetosGlobales.MiFormGestionPedido.Show();
             }
         }
+
+        private void cerrarSesiónToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Locales.ObjetosGlobales.MiLogin.Show();
+            this.Hide();
+        }
     }
 }

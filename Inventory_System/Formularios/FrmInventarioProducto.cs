@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using CrystalDecisions.CrystalReports.Engine;
 
 namespace Inventory_System.Formularios
 {
@@ -111,6 +112,8 @@ namespace Inventory_System.Formularios
             TxtTotal.Text = string.Format("{0:C2}", Totalizar());
         }
 
+
+
         private void BtnCrearInventario_Click(object sender, EventArgs e)
         {
             if (ValidarInventario())
@@ -123,6 +126,22 @@ namespace Inventory_System.Formularios
                 if (MiInventarioPLocal.Agregar())
                 {
                     MessageBox.Show("El inventario se realizó correctamente", "", MessageBoxButtons.OK);
+
+                    ReportDocument MiReporteInventarioProd = new ReportDocument();
+
+                    MiReporteInventarioProd = new Reportes.RptInventarioProd();
+
+                    MiReporteInventarioProd = MiInventarioPLocal.Imprimir(MiReporteInventarioProd);
+
+                    FrmVisualizadorReportes MiFormCRV = new FrmVisualizadorReportes();
+
+                    MiFormCRV.CrvVisualizador.ReportSource = MiReporteInventarioProd;
+
+                    MiFormCRV.Show();
+
+
+                    MiFormCRV.CrvVisualizador.Zoom(1);
+
                     Limpiar();
                 }
 

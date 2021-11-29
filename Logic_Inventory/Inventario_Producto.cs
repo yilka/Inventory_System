@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data;
 using System.Data.SqlClient;
+using CrystalDecisions.CrystalReports.Engine;
 
 namespace Logic_Inventory
 {
@@ -22,6 +23,32 @@ namespace Logic_Inventory
         {
             MiUsuario = new Usuario();
             ProdListaDetalle = new List<Inv_Prod_Detalle>();
+        }
+
+
+
+        public ReportDocument Imprimir(ReportDocument repo)
+        {
+            ReportDocument R = repo;
+
+            Crystal ObjCrytal = new Crystal(R);
+
+            DataTable Datos = new DataTable();
+
+            Conexion MiCnn = new Conexion();
+
+            MiCnn.ListadoDeParametros.Add(new SqlParameter("@ID", this.ID_InventarioP));
+
+            Datos = MiCnn.DMLSelect("SPInventarioProdReporte");
+
+            if (Datos != null && Datos.Rows.Count > 0)
+            {
+                ObjCrytal.Datos = Datos;
+
+                R = ObjCrytal.GenerarReporte();
+            }
+
+            return R;
         }
 
 
@@ -55,6 +82,9 @@ namespace Logic_Inventory
                         MyCnnDetalle.ListadoDeParametros.Add(new SqlParameter("@Cantidad", item.Cantidad));
 
                         MyCnnDetalle.DMLUpdateDeleteInsert("SPInventarioProdAgregarDetalle");
+
+                        Producto MiProd = new Producto();
+                        MiProd.SumarAStock(item.MiProducto.ID_Producto, item.Cantidad);
 
                         Acumulador += 1;
                     }

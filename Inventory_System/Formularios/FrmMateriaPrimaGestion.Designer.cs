@@ -61,10 +61,10 @@ namespace Inventory_System.Formularios
             this.DgvLista = new System.Windows.Forms.DataGridView();
             this.ColID_Materia = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColCodigo_Barras = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColNombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColMPNombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColPrecio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColCantidadEnStock = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColID_Proveedor = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColNombreProv = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DgvLista)).BeginInit();
             this.SuspendLayout();
@@ -311,9 +311,9 @@ namespace Inventory_System.Formularios
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(14, 117);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(156, 24);
+            this.label3.Size = new System.Drawing.Size(164, 24);
             this.label3.TabIndex = 5;
-            this.label3.Text = "Código de Barras";
+            this.label3.Text = "Código de Materia";
             // 
             // TxtCodigoBarras
             // 
@@ -380,10 +380,10 @@ namespace Inventory_System.Formularios
             this.DgvLista.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ColID_Materia,
             this.ColCodigo_Barras,
-            this.ColNombre,
+            this.ColMPNombre,
             this.ColPrecio,
             this.ColCantidadEnStock,
-            this.ColID_Proveedor});
+            this.ColNombreProv});
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -419,13 +419,13 @@ namespace Inventory_System.Formularios
             this.ColCodigo_Barras.ReadOnly = true;
             this.ColCodigo_Barras.Width = 190;
             // 
-            // ColNombre
+            // ColMPNombre
             // 
-            this.ColNombre.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.ColNombre.DataPropertyName = "Nombre";
-            this.ColNombre.HeaderText = "Nombre";
-            this.ColNombre.Name = "ColNombre";
-            this.ColNombre.ReadOnly = true;
+            this.ColMPNombre.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.ColMPNombre.DataPropertyName = "MPNombre";
+            this.ColMPNombre.HeaderText = "Nombre";
+            this.ColMPNombre.Name = "ColMPNombre";
+            this.ColMPNombre.ReadOnly = true;
             // 
             // ColPrecio
             // 
@@ -444,13 +444,13 @@ namespace Inventory_System.Formularios
             this.ColCantidadEnStock.ReadOnly = true;
             this.ColCantidadEnStock.Width = 210;
             // 
-            // ColID_Proveedor
+            // ColNombreProv
             // 
-            this.ColID_Proveedor.DataPropertyName = "ID_Proveedor";
-            this.ColID_Proveedor.HeaderText = "Proveedor";
-            this.ColID_Proveedor.Name = "ColID_Proveedor";
-            this.ColID_Proveedor.ReadOnly = true;
-            this.ColID_Proveedor.Width = 370;
+            this.ColNombreProv.DataPropertyName = "NombreProv";
+            this.ColNombreProv.HeaderText = "Proveedor";
+            this.ColNombreProv.Name = "ColNombreProv";
+            this.ColNombreProv.ReadOnly = true;
+            this.ColNombreProv.Width = 370;
             // 
             // FrmMateriaPrimaGestion
             // 
@@ -512,9 +512,9 @@ namespace Inventory_System.Formularios
         private System.Windows.Forms.TextBox TxtNombre;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColID_Materia;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColCodigo_Barras;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColNombre;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColMPNombre;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColPrecio;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColCantidadEnStock;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColID_Proveedor;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColNombreProv;
     }
 }

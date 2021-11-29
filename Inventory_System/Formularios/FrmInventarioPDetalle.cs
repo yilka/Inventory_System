@@ -44,6 +44,7 @@ namespace Inventory_System.Formularios
         }
 
 
+
         private bool ValidarDatos()
         {
             bool R = false;

@@ -29,6 +29,8 @@ namespace Inventory_System.Formularios
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmPerdidas));
             this.BtnCancelar = new System.Windows.Forms.Button();
             this.BtnCrearInventario = new System.Windows.Forms.Button();
@@ -43,13 +45,13 @@ namespace Inventory_System.Formularios
             this.BtnEliminarProducto = new System.Windows.Forms.Button();
             this.BtnAgregarProducto = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.TxtDetalle = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
             this.TxtUsuario = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.DtpFecha = new System.Windows.Forms.DateTimePicker();
-            this.TxtDetalle = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DgvListaProductos)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -57,7 +59,7 @@ namespace Inventory_System.Formularios
             // 
             // BtnCancelar
             // 
-            this.BtnCancelar.BackColor = System.Drawing.Color.Sienna;
+            this.BtnCancelar.BackColor = System.Drawing.Color.MidnightBlue;
             this.BtnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnCancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnCancelar.ForeColor = System.Drawing.SystemColors.ControlLightLight;
@@ -71,7 +73,7 @@ namespace Inventory_System.Formularios
             // 
             // BtnCrearInventario
             // 
-            this.BtnCrearInventario.BackColor = System.Drawing.Color.Peru;
+            this.BtnCrearInventario.BackColor = System.Drawing.Color.SlateGray;
             this.BtnCrearInventario.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnCrearInventario.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnCrearInventario.ForeColor = System.Drawing.SystemColors.ControlLightLight;
@@ -79,7 +81,7 @@ namespace Inventory_System.Formularios
             this.BtnCrearInventario.Name = "BtnCrearInventario";
             this.BtnCrearInventario.Size = new System.Drawing.Size(159, 38);
             this.BtnCrearInventario.TabIndex = 16;
-            this.BtnCrearInventario.Text = "Crear Inventario";
+            this.BtnCrearInventario.Text = "Crear Pérdida";
             this.BtnCrearInventario.UseVisualStyleBackColor = false;
             this.BtnCrearInventario.Click += new System.EventHandler(this.BtnCrearInventario_Click);
             // 
@@ -121,12 +123,28 @@ namespace Inventory_System.Formularios
             this.DgvListaProductos.AllowUserToAddRows = false;
             this.DgvListaProductos.AllowUserToDeleteRows = false;
             this.DgvListaProductos.BackgroundColor = System.Drawing.Color.Gainsboro;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.InactiveCaption;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DgvListaProductos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.DgvListaProductos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DgvListaProductos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ColID_Producto,
             this.ColNombre,
             this.ColCantidad,
             this.ColTotal});
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.InactiveCaption;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.DgvListaProductos.DefaultCellStyle = dataGridViewCellStyle2;
             this.DgvListaProductos.Location = new System.Drawing.Point(6, 62);
             this.DgvListaProductos.MultiSelect = false;
             this.DgvListaProductos.Name = "DgvListaProductos";
@@ -168,7 +186,7 @@ namespace Inventory_System.Formularios
             // 
             // BtnEliminarProducto
             // 
-            this.BtnEliminarProducto.BackColor = System.Drawing.Color.BurlyWood;
+            this.BtnEliminarProducto.BackColor = System.Drawing.Color.MidnightBlue;
             this.BtnEliminarProducto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnEliminarProducto.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnEliminarProducto.ForeColor = System.Drawing.SystemColors.ControlLightLight;
@@ -182,7 +200,7 @@ namespace Inventory_System.Formularios
             // 
             // BtnAgregarProducto
             // 
-            this.BtnAgregarProducto.BackColor = System.Drawing.Color.Tan;
+            this.BtnAgregarProducto.BackColor = System.Drawing.Color.SteelBlue;
             this.BtnAgregarProducto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnAgregarProducto.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnAgregarProducto.ForeColor = System.Drawing.SystemColors.ControlLightLight;
@@ -208,6 +226,28 @@ namespace Inventory_System.Formularios
             this.groupBox1.Size = new System.Drawing.Size(917, 139);
             this.groupBox1.TabIndex = 12;
             this.groupBox1.TabStop = false;
+            // 
+            // TxtDetalle
+            // 
+            this.TxtDetalle.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TxtDetalle.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.TxtDetalle.Location = new System.Drawing.Point(41, 104);
+            this.TxtDetalle.Multiline = true;
+            this.TxtDetalle.Name = "TxtDetalle";
+            this.TxtDetalle.ScrollBars = System.Windows.Forms.ScrollBars.Both;
+            this.TxtDetalle.Size = new System.Drawing.Size(831, 29);
+            this.TxtDetalle.TabIndex = 7;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label5.Location = new System.Drawing.Point(37, 76);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(67, 24);
+            this.label5.TabIndex = 6;
+            this.label5.Text = "Detalle";
             // 
             // TxtUsuario
             // 
@@ -260,29 +300,6 @@ namespace Inventory_System.Formularios
             this.DtpFecha.Name = "DtpFecha";
             this.DtpFecha.Size = new System.Drawing.Size(346, 29);
             this.DtpFecha.TabIndex = 0;
-            // 
-            // TxtDetalle
-            // 
-            this.TxtDetalle.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtDetalle.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.TxtDetalle.Location = new System.Drawing.Point(41, 104);
-            this.TxtDetalle.Multiline = true;
-            this.TxtDetalle.Name = "TxtDetalle";
-            this.TxtDetalle.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.TxtDetalle.Size = new System.Drawing.Size(831, 29);
-            this.TxtDetalle.TabIndex = 7;
-            this.TxtDetalle.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label5.Location = new System.Drawing.Point(37, 76);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(67, 24);
-            this.label5.TabIndex = 6;
-            this.label5.Text = "Detalle";
             // 
             // FrmPerdidas
             // 

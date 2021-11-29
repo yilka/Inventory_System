@@ -310,9 +310,9 @@ namespace Inventory_System.Formularios
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(15, 117);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(156, 24);
+            this.label3.Size = new System.Drawing.Size(179, 24);
             this.label3.TabIndex = 5;
-            this.label3.Text = "Código de Barras";
+            this.label3.Text = "Código de Producto";
             // 
             // TxtCodigoBarras
             // 
