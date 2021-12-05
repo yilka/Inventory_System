@@ -1,11 +1,8 @@
-﻿using System;
+﻿using CrystalDecisions.CrystalReports.Engine;
+using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Data;
 using System.Data.SqlClient;
-using CrystalDecisions.CrystalReports.Engine;
 
 namespace Logic_Inventory
 {
@@ -120,6 +117,8 @@ namespace Logic_Inventory
         public DataTable ListarTodos()
         {
             DataTable R = new DataTable();
+            Conexion MyCnn = new Conexion();
+            R = MyCnn.DMLSelect("SPInventarioMPListarEnDetalle");
             return R;
         }
 

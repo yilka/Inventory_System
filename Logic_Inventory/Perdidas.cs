@@ -1,18 +1,15 @@
-﻿using System;
+﻿using CrystalDecisions.CrystalReports.Engine;
+using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Data;
 using System.Data.SqlClient;
-using CrystalDecisions.CrystalReports.Engine;
 
 
 namespace Logic_Inventory
 {
     public class Perdidas
     {
-        public int ID_Perdida { get; set; }
+        public int ID_Perdidas { get; set; }
         public DateTime Fecha { get; set; }
         public string Detalle { get; set; }
         public bool Activo { get; set; }
@@ -38,7 +35,7 @@ namespace Logic_Inventory
 
             Conexion MiCnn = new Conexion();
 
-            MiCnn.ListadoDeParametros.Add(new SqlParameter("@ID", this.ID_Perdida));
+            MiCnn.ListadoDeParametros.Add(new SqlParameter("@ID", this.ID_Perdidas));
 
             Datos = MiCnn.DMLSelect("SPPerdidaReporte");
 
@@ -72,7 +69,7 @@ namespace Logic_Inventory
                 try
                 {
                     IdInventarioRecienCreado = Convert.ToInt32(Retorno.ToString());
-                    this.ID_Perdida = IdInventarioRecienCreado;
+                    this.ID_Perdidas = IdInventarioRecienCreado;
                     int Acumulador = 0;
 
                     foreach (Perdidas_Detalle item in this.PerdListaDetalle)
@@ -80,7 +77,7 @@ namespace Logic_Inventory
                         Conexion MyCnnDetalle = new Conexion();
 
                         MyCnnDetalle.ListadoDeParametros.Add(new SqlParameter("@ID_Producto", item.MiProducto.ID_Producto));
-                        MyCnnDetalle.ListadoDeParametros.Add(new SqlParameter("@ID_Perdidas", this.ID_Perdida));
+                        MyCnnDetalle.ListadoDeParametros.Add(new SqlParameter("@ID_Perdidas", this.ID_Perdidas));
                         MyCnnDetalle.ListadoDeParametros.Add(new SqlParameter("@Total", item.Total));
                         MyCnnDetalle.ListadoDeParametros.Add(new SqlParameter("@Cantidad", item.Cantidad));
 
@@ -122,6 +119,8 @@ namespace Logic_Inventory
         public DataTable ListarTodos()
         {
             DataTable R = new DataTable();
+            Conexion MyCnn = new Conexion();
+            R = MyCnn.DMLSelect("SPPerdidaListarEnDetalle");
             return R;
         }
 

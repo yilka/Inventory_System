@@ -1,11 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Inventory_System.Formularios
@@ -64,6 +60,7 @@ namespace Inventory_System.Formularios
         private void LimpiarForm()
         {
             TxtID.Clear();
+            TxtNombre.Clear();
             TxtCodigoBarras.Text = TxtCodigoBarras.Tag.ToString();
             TxtPrecio.Clear();
             TxtCantidadStock.Clear();

@@ -142,6 +142,30 @@
     <Compile Include="Formularios\FrmInventarioProducto.Designer.cs">
       <DependentUpon>FrmInventarioProducto.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formularios\FrmListaInventariosMP.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\FrmListaInventariosMP.Designer.cs">
+      <DependentUpon>FrmListaInventariosMP.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\FrmListaPedido.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\FrmListaPedido.Designer.cs">
+      <DependentUpon>FrmListaPedido.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\FrmListaPerdidas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\FrmListaPerdidas.Designer.cs">
+      <DependentUpon>FrmListaPerdidas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\FrmListaUsos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\FrmListaUsos.Designer.cs">
+      <DependentUpon>FrmListaUsos.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\FrmLogin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -202,6 +226,30 @@
     <Compile Include="Formularios\FrmProveedorGestion.Designer.cs">
       <DependentUpon>FrmProveedorGestion.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formularios\FrmReportesMaterias.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\FrmReportesMaterias.Designer.cs">
+      <DependentUpon>FrmReportesMaterias.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\FrmReportesProductos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\FrmReportesProductos.Designer.cs">
+      <DependentUpon>FrmReportesProductos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\FrmUsoDetalle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\FrmUsoDetalle.Designer.cs">
+      <DependentUpon>FrmUsoDetalle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\FrmUsoMateriaPrima.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\FrmUsoMateriaPrima.Designer.cs">
+      <DependentUpon>FrmUsoMateriaPrima.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\FrmUsuarioGestion.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -214,10 +262,40 @@
     <Compile Include="Formularios\FrmVisualizadorReportes.Designer.cs">
       <DependentUpon>FrmVisualizadorReportes.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formularios\FrmListaInvetariosProducto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\FrmListaInvetariosProducto.Designer.cs">
+      <DependentUpon>FrmListaInvetariosProducto.cs</DependentUpon>
+    </Compile>
     <Compile Include="Herramientas.cs" />
     <Compile Include="Locales\ObjetosGlobales.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Reportes\RptGeneralPaletas.cs">
+      <DependentUpon>RptGeneralPaletas.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Reportes\RptGeneralBolis.cs">
+      <DependentUpon>RptGeneralBolis.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Reportes\RptMateria.cs">
+      <DependentUpon>RptMateria.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Reportes\RptProducto.cs">
+      <DependentUpon>RptProducto.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
     <Compile Include="Reportes\RptInventarioMP.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -242,6 +320,30 @@
       <DependentUpon>RptPerdida.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Reportes\RptTodasLasMateriasPrimas.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RptTodasLasMateriasPrimas.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reportes\RptGeneralPalillo.cs">
+      <DependentUpon>RptGeneralPalillo.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Reportes\RptTodosLosProductos.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RptTodosLosProductos.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reportes\RptUsoMP.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RptUsoMP.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <EmbeddedResource Include="Formularios\FrmInventarioMP.resx">
       <DependentUpon>FrmInventarioMP.cs</DependentUpon>
     </EmbeddedResource>
@@ -250,6 +352,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\FrmInventarioProducto.resx">
       <DependentUpon>FrmInventarioProducto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\FrmListaInventariosMP.resx">
+      <DependentUpon>FrmListaInventariosMP.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\FrmListaPedido.resx">
+      <DependentUpon>FrmListaPedido.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\FrmListaPerdidas.resx">
+      <DependentUpon>FrmListaPerdidas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\FrmListaUsos.resx">
+      <DependentUpon>FrmListaUsos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\FrmLogin.resx">
       <DependentUpon>FrmLogin.cs</DependentUpon>
@@ -281,16 +395,47 @@
     <EmbeddedResource Include="Formularios\FrmProveedorGestion.resx">
       <DependentUpon>FrmProveedorGestion.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\FrmReportesMaterias.resx">
+      <DependentUpon>FrmReportesMaterias.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\FrmReportesProductos.resx">
+      <DependentUpon>FrmReportesProductos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\FrmUsoDetalle.resx">
+      <DependentUpon>FrmUsoDetalle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\FrmUsoMateriaPrima.resx">
+      <DependentUpon>FrmUsoMateriaPrima.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Formularios\FrmUsuarioGestion.resx">
       <DependentUpon>FrmUsuarioGestion.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\FrmVisualizadorReportes.resx">
       <DependentUpon>FrmVisualizadorReportes.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\FrmListaInvetariosProducto.resx">
+      <DependentUpon>FrmListaInvetariosProducto.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\RptGeneralPaletas.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>RptGeneralPaletas.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\RptGeneralBolis.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>RptGeneralBolis.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\RptMateria.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>RptMateria.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\RptProducto.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>RptProducto.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Reportes\RptInventarioMP.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
@@ -307,6 +452,22 @@
     <EmbeddedResource Include="Reportes\RptPerdida.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>RptPerdida.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\RptTodasLasMateriasPrimas.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>RptTodasLasMateriasPrimas.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\RptGeneralPalillo.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>RptGeneralPalillo.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\RptTodosLosProductos.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>RptTodosLosProductos.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\RptUsoMP.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>RptUsoMP.cs</LastGenOutput>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

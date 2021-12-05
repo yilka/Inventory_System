@@ -1,13 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
+﻿using CrystalDecisions.CrystalReports.Engine;
+using System;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using CrystalDecisions.CrystalReports.Engine;
 
 namespace Inventory_System.Formularios
 {
@@ -74,6 +68,7 @@ namespace Inventory_System.Formularios
             bool R = false;
 
             if (DtpFecha.Value.Date <= DateTime.Now.Date &&
+            !string.IsNullOrEmpty(TxtCliente.Text.Trim())&&
                 DtListaProductos.Rows.Count > 0)
             {
                 R = true;
@@ -85,6 +80,13 @@ namespace Inventory_System.Formularios
                     MessageBox.Show(@"La fecha del pedido no puede ser superior a la fecha actual", "Error de validación", MessageBoxButtons.OK);
                     return false;
                 }
+                else if(string.IsNullOrEmpty(TxtCliente.Text.Trim())){
+                    MessageBox.Show("Se requiere ingresar el nombre del cliente", "", MessageBoxButtons.OK);
+                    TxtCliente.Focus();
+                    TxtCliente.SelectAll();
+                }
+
+       
             }
             return R;
         }

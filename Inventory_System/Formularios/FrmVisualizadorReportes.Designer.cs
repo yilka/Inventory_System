@@ -41,11 +41,12 @@ namespace Inventory_System.Formularios
             this.CrvVisualizador.Dock = System.Windows.Forms.DockStyle.Fill;
             this.CrvVisualizador.Location = new System.Drawing.Point(0, 0);
             this.CrvVisualizador.Name = "CrvVisualizador";
+            this.CrvVisualizador.ShowGroupTreeButton = false;
             this.CrvVisualizador.ShowLogo = false;
             this.CrvVisualizador.ShowParameterPanelButton = false;
-            this.CrvVisualizador.ShowRefreshButton = false;
             this.CrvVisualizador.Size = new System.Drawing.Size(1259, 749);
             this.CrvVisualizador.TabIndex = 0;
+            this.CrvVisualizador.ToolPanelView = CrystalDecisions.Windows.Forms.ToolPanelViewType.None;
             // 
             // FrmVisualizadorReportes
             // 

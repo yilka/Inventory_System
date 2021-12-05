@@ -1,11 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Inventory_System.Formularios
@@ -14,14 +8,12 @@ namespace Inventory_System.Formularios
     {
 
         public DataTable ListaProductos { get; set; }
-        public DataTable ListaProductosConFiltro { get; set; }
         public Logic_Inventory.Producto MiProducto { get; set; }
 
         public FrmPerdidasDetalle()
         {
             InitializeComponent();
             ListaProductos = new DataTable();
-            ListaProductosConFiltro = new DataTable();
             MiProducto = new Logic_Inventory.Producto();
         }
 

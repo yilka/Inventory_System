@@ -1,8 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using CrystalDecisions.CrystalReports.Engine;
+using System;
 using System.Data;
 using System.Data.SqlClient;
 
@@ -26,6 +23,32 @@ namespace Logic_Inventory
             Categoria = new MP_Categoria();
             MiProveedor = new Proveedor();
             Activo = true;
+        }
+
+
+
+        public ReportDocument Imprimir(ReportDocument repo)
+        {
+            ReportDocument R = repo;
+
+            Crystal ObjCrytal = new Crystal(R);
+
+            DataTable Datos = new DataTable();
+
+            Conexion MiCnn = new Conexion();
+
+            MiCnn.ListadoDeParametros.Add(new SqlParameter("@ID", this.ID_Materia));
+
+            Datos = MiCnn.DMLSelect("SPMateriaReporte");
+
+            if (Datos != null && Datos.Rows.Count > 0)
+            {
+                ObjCrytal.Datos = Datos;
+
+                R = ObjCrytal.GenerarReporte();
+            }
+
+            return R;
         }
 
         public bool Agregar()
@@ -84,6 +107,36 @@ namespace Logic_Inventory
 
             return R;
         }
+
+
+
+        public bool RestarAStock(int IdMateria, int Cantidad)
+        {
+            bool R = false;
+            try
+            {
+                Conexion MiCnn = new Conexion();
+
+                MiCnn.ListadoDeParametros.Add(new SqlParameter("@Id", IdMateria));
+                MiCnn.ListadoDeParametros.Add(new SqlParameter("@Cant", Cantidad));
+
+
+
+                int retorno = MiCnn.DMLUpdateDeleteInsert("SPMateriaRestarStock");
+                if (retorno > 0)
+                {
+                    R = true;
+                }
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+
+            return R;
+        }
+
+
 
         public bool Editar()
         {
@@ -259,5 +312,13 @@ namespace Logic_Inventory
             return R;
         }
 
+
+        public DataTable ListarTodos()
+        {
+            DataTable R = new DataTable();
+            Conexion MyCnn = new Conexion();
+            R = MyCnn.DMLSelect("SPMateriaListarReportes");
+            return R;
+        }
     }
 }

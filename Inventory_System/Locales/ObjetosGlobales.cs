@@ -26,5 +26,20 @@ namespace Inventory_System.Locales
 
         public static Formularios.FrmPerdidas MiFormGestionPerdidas = new Formularios.FrmPerdidas();
 
+        public static Formularios.FrmUsoMateriaPrima MiFormGestionUsoMP = new Formularios.FrmUsoMateriaPrima();
+
+        public static Formularios.FrmListaInvetariosProducto MiFormListaInventariosP = new Formularios.FrmListaInvetariosProducto();
+
+        public static Formularios.FrmReportesProductos MiFormReportesProductos = new Formularios.FrmReportesProductos();
+
+        public static Formularios.FrmReportesMaterias MiFormReportesMaterias = new Formularios.FrmReportesMaterias();
+
+        public static Formularios.FrmListaInventariosMP MiFormListaInventariosMP = new Formularios.FrmListaInventariosMP();
+
+        public static Formularios.FrmListaPerdidas MiFormListaPerdidas = new Formularios.FrmListaPerdidas();
+
+        public static Formularios.FrmListaPedido MiFormListaPedido = new Formularios.FrmListaPedido();
+
+        public static Formularios.FrmListaUsos MiFormListaUsos = new Formularios.FrmListaUsos();
     }
 }

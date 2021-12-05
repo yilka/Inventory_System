@@ -1,11 +1,8 @@
-﻿using System;
+﻿using CrystalDecisions.CrystalReports.Engine;
+using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Data;
 using System.Data.SqlClient;
-using CrystalDecisions.CrystalReports.Engine;
 
 namespace Logic_Inventory
 {
@@ -105,6 +102,24 @@ namespace Logic_Inventory
         public bool Anular()
         {
             bool R = false;
+            try
+            {
+                Conexion MiCnn = new Conexion();
+                MiCnn.ListadoDeParametros.Add(new SqlParameter("@Id", this.ID_InventarioP));
+                int retorno = MiCnn.DMLUpdateDeleteInsert("SPInventarioPAnular");
+
+                Producto MiProduct = new Producto();
+                //MiProduct.RestarAStock(item.MiProducto.ID_Producto, item.Cantidad); 
+
+                if (retorno > 0)
+                {
+                    R = true;
+                }
+            }
+            catch (Exception)
+            {
+                throw;
+            }
             return R;
         }
 
@@ -112,13 +127,30 @@ namespace Logic_Inventory
         public bool ConsultarPorID()
         {
             bool R = false;
+
+            try
+            {
+                Conexion MyCnn = new Conexion();
+                MyCnn.ListadoDeParametros.Add(new SqlParameter("@Id", this.ID_InventarioP));
+                DataTable retorno = MyCnn.DMLSelect("SPInventarioPConsultarPorID");
+
+                if (retorno.Rows.Count > 0)
+                {
+                    R = true;
+                }
+            }
+            catch (Exception)
+            {
+                throw;
+            }
             return R;
         }
-
 
         public DataTable ListarTodos()
         {
             DataTable R = new DataTable();
+            Conexion MyCnn = new Conexion();
+            R = MyCnn.DMLSelect("SPInventarioProdListarEnDetalle");
             return R;
         }
 

@@ -1,11 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Inventory_System.Formularios
@@ -14,14 +8,12 @@ namespace Inventory_System.Formularios
     {
 
         public DataTable ListaMaterias { get; set; }
-        public DataTable ListaMateriasConFiltro { get; set; }
         public Logic_Inventory.Materia_Prima MiMateria { get; set; }
 
         public FrmMPDetalle()
         {
             InitializeComponent();
             ListaMaterias = new DataTable();
-            ListaMateriasConFiltro = new DataTable();
             MiMateria = new Logic_Inventory.Materia_Prima(); 
         }
 

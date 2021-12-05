@@ -42,12 +42,26 @@ namespace Inventory_System.Formularios
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.perdidasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pedidosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.usoDeMateriaPrimaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.listasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.listaInventarioProductosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.reportesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.listaDeTodosLosProductosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.listaDeTodaLaMateriaPrimaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.productosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.materiaPrimaToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.reportesGeneralesProductosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.palilloToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.paletasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.bolisToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.acercaDeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.LblUsuario = new System.Windows.Forms.ToolStripStatusLabel();
+            this.listaInventariosMateriaPrimaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.listaPérdidasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.listaPedidosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.listaUsosDeMateriaPrimaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.cerrarSesiónToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -61,8 +75,7 @@ namespace Inventory_System.Formularios
             this.mantenimientosToolStripMenuItem,
             this.inventariosToolStripMenuItem,
             this.reportesToolStripMenuItem,
-            this.acercaDeToolStripMenuItem,
-            this.cerrarSesiónToolStripMenuItem});
+            this.acercaDeToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(7, 2, 0, 2);
@@ -116,7 +129,9 @@ namespace Inventory_System.Formularios
             this.inventarioMateriaPrimaToolStripMenuItem,
             this.toolStripSeparator1,
             this.perdidasToolStripMenuItem,
-            this.pedidosToolStripMenuItem});
+            this.pedidosToolStripMenuItem,
+            this.usoDeMateriaPrimaToolStripMenuItem,
+            this.listasToolStripMenuItem});
             this.inventariosToolStripMenuItem.Name = "inventariosToolStripMenuItem";
             this.inventariosToolStripMenuItem.Size = new System.Drawing.Size(117, 29);
             this.inventariosToolStripMenuItem.Text = "Inventarios";
@@ -154,11 +169,102 @@ namespace Inventory_System.Formularios
             this.pedidosToolStripMenuItem.Text = "Pedidos";
             this.pedidosToolStripMenuItem.Click += new System.EventHandler(this.pedidosToolStripMenuItem_Click);
             // 
+            // usoDeMateriaPrimaToolStripMenuItem
+            // 
+            this.usoDeMateriaPrimaToolStripMenuItem.Name = "usoDeMateriaPrimaToolStripMenuItem";
+            this.usoDeMateriaPrimaToolStripMenuItem.Size = new System.Drawing.Size(293, 30);
+            this.usoDeMateriaPrimaToolStripMenuItem.Text = "Uso de Materia Prima";
+            this.usoDeMateriaPrimaToolStripMenuItem.Click += new System.EventHandler(this.usoDeMateriaPrimaToolStripMenuItem_Click);
+            // 
+            // listasToolStripMenuItem
+            // 
+            this.listasToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.listaInventarioProductosToolStripMenuItem,
+            this.listaInventariosMateriaPrimaToolStripMenuItem,
+            this.listaPérdidasToolStripMenuItem,
+            this.listaPedidosToolStripMenuItem,
+            this.listaUsosDeMateriaPrimaToolStripMenuItem});
+            this.listasToolStripMenuItem.Name = "listasToolStripMenuItem";
+            this.listasToolStripMenuItem.Size = new System.Drawing.Size(293, 30);
+            this.listasToolStripMenuItem.Text = "Listas";
+            // 
+            // listaInventarioProductosToolStripMenuItem
+            // 
+            this.listaInventarioProductosToolStripMenuItem.Name = "listaInventarioProductosToolStripMenuItem";
+            this.listaInventarioProductosToolStripMenuItem.Size = new System.Drawing.Size(344, 30);
+            this.listaInventarioProductosToolStripMenuItem.Text = "Lista Inventarios Productos";
+            this.listaInventarioProductosToolStripMenuItem.Click += new System.EventHandler(this.listaInventarioProductosToolStripMenuItem_Click);
+            // 
             // reportesToolStripMenuItem
             // 
+            this.reportesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.listaDeTodosLosProductosToolStripMenuItem,
+            this.listaDeTodaLaMateriaPrimaToolStripMenuItem,
+            this.productosToolStripMenuItem,
+            this.materiaPrimaToolStripMenuItem1,
+            this.reportesGeneralesProductosToolStripMenuItem});
             this.reportesToolStripMenuItem.Name = "reportesToolStripMenuItem";
             this.reportesToolStripMenuItem.Size = new System.Drawing.Size(97, 29);
             this.reportesToolStripMenuItem.Text = "Reportes";
+            // 
+            // listaDeTodosLosProductosToolStripMenuItem
+            // 
+            this.listaDeTodosLosProductosToolStripMenuItem.Name = "listaDeTodosLosProductosToolStripMenuItem";
+            this.listaDeTodosLosProductosToolStripMenuItem.Size = new System.Drawing.Size(336, 30);
+            this.listaDeTodosLosProductosToolStripMenuItem.Text = "Lista de todos los Productos";
+            this.listaDeTodosLosProductosToolStripMenuItem.Click += new System.EventHandler(this.listaDeTodosLosProductosToolStripMenuItem_Click);
+            // 
+            // listaDeTodaLaMateriaPrimaToolStripMenuItem
+            // 
+            this.listaDeTodaLaMateriaPrimaToolStripMenuItem.Name = "listaDeTodaLaMateriaPrimaToolStripMenuItem";
+            this.listaDeTodaLaMateriaPrimaToolStripMenuItem.Size = new System.Drawing.Size(336, 30);
+            this.listaDeTodaLaMateriaPrimaToolStripMenuItem.Text = "Lista de toda la Materia Prima";
+            this.listaDeTodaLaMateriaPrimaToolStripMenuItem.Click += new System.EventHandler(this.listaDeTodaLaMateriaPrimaToolStripMenuItem_Click);
+            // 
+            // productosToolStripMenuItem
+            // 
+            this.productosToolStripMenuItem.Name = "productosToolStripMenuItem";
+            this.productosToolStripMenuItem.Size = new System.Drawing.Size(336, 30);
+            this.productosToolStripMenuItem.Text = "Productos";
+            this.productosToolStripMenuItem.Click += new System.EventHandler(this.productosToolStripMenuItem_Click);
+            // 
+            // materiaPrimaToolStripMenuItem1
+            // 
+            this.materiaPrimaToolStripMenuItem1.Name = "materiaPrimaToolStripMenuItem1";
+            this.materiaPrimaToolStripMenuItem1.Size = new System.Drawing.Size(336, 30);
+            this.materiaPrimaToolStripMenuItem1.Text = "Materia Prima";
+            this.materiaPrimaToolStripMenuItem1.Click += new System.EventHandler(this.materiaPrimaToolStripMenuItem1_Click);
+            // 
+            // reportesGeneralesProductosToolStripMenuItem
+            // 
+            this.reportesGeneralesProductosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.palilloToolStripMenuItem,
+            this.paletasToolStripMenuItem,
+            this.bolisToolStripMenuItem});
+            this.reportesGeneralesProductosToolStripMenuItem.Name = "reportesGeneralesProductosToolStripMenuItem";
+            this.reportesGeneralesProductosToolStripMenuItem.Size = new System.Drawing.Size(336, 30);
+            this.reportesGeneralesProductosToolStripMenuItem.Text = "Reportes Generales Productos";
+            // 
+            // palilloToolStripMenuItem
+            // 
+            this.palilloToolStripMenuItem.Name = "palilloToolStripMenuItem";
+            this.palilloToolStripMenuItem.Size = new System.Drawing.Size(143, 30);
+            this.palilloToolStripMenuItem.Text = "Palillo";
+            this.palilloToolStripMenuItem.Click += new System.EventHandler(this.palilloToolStripMenuItem_Click);
+            // 
+            // paletasToolStripMenuItem
+            // 
+            this.paletasToolStripMenuItem.Name = "paletasToolStripMenuItem";
+            this.paletasToolStripMenuItem.Size = new System.Drawing.Size(143, 30);
+            this.paletasToolStripMenuItem.Text = "Paletas";
+            this.paletasToolStripMenuItem.Click += new System.EventHandler(this.paletasToolStripMenuItem_Click);
+            // 
+            // bolisToolStripMenuItem
+            // 
+            this.bolisToolStripMenuItem.Name = "bolisToolStripMenuItem";
+            this.bolisToolStripMenuItem.Size = new System.Drawing.Size(143, 30);
+            this.bolisToolStripMenuItem.Text = "Bolis";
+            this.bolisToolStripMenuItem.Click += new System.EventHandler(this.bolisToolStripMenuItem_Click);
             // 
             // acercaDeToolStripMenuItem
             // 
@@ -184,6 +290,34 @@ namespace Inventory_System.Formularios
             this.LblUsuario.Size = new System.Drawing.Size(71, 21);
             this.LblUsuario.Text = "Usuario: ";
             // 
+            // listaInventariosMateriaPrimaToolStripMenuItem
+            // 
+            this.listaInventariosMateriaPrimaToolStripMenuItem.Name = "listaInventariosMateriaPrimaToolStripMenuItem";
+            this.listaInventariosMateriaPrimaToolStripMenuItem.Size = new System.Drawing.Size(344, 30);
+            this.listaInventariosMateriaPrimaToolStripMenuItem.Text = "Lista Inventarios Materia Prima";
+            this.listaInventariosMateriaPrimaToolStripMenuItem.Click += new System.EventHandler(this.listaInventariosMateriaPrimaToolStripMenuItem_Click);
+            // 
+            // listaPérdidasToolStripMenuItem
+            // 
+            this.listaPérdidasToolStripMenuItem.Name = "listaPérdidasToolStripMenuItem";
+            this.listaPérdidasToolStripMenuItem.Size = new System.Drawing.Size(344, 30);
+            this.listaPérdidasToolStripMenuItem.Text = "Lista Pérdidas";
+            this.listaPérdidasToolStripMenuItem.Click += new System.EventHandler(this.listaPérdidasToolStripMenuItem_Click);
+            // 
+            // listaPedidosToolStripMenuItem
+            // 
+            this.listaPedidosToolStripMenuItem.Name = "listaPedidosToolStripMenuItem";
+            this.listaPedidosToolStripMenuItem.Size = new System.Drawing.Size(344, 30);
+            this.listaPedidosToolStripMenuItem.Text = "Lista Pedidos";
+            this.listaPedidosToolStripMenuItem.Click += new System.EventHandler(this.listaPedidosToolStripMenuItem_Click);
+            // 
+            // listaUsosDeMateriaPrimaToolStripMenuItem
+            // 
+            this.listaUsosDeMateriaPrimaToolStripMenuItem.Name = "listaUsosDeMateriaPrimaToolStripMenuItem";
+            this.listaUsosDeMateriaPrimaToolStripMenuItem.Size = new System.Drawing.Size(344, 30);
+            this.listaUsosDeMateriaPrimaToolStripMenuItem.Text = "Lista Usos de Materia Prima";
+            this.listaUsosDeMateriaPrimaToolStripMenuItem.Click += new System.EventHandler(this.listaUsosDeMateriaPrimaToolStripMenuItem_Click);
+            // 
             // pictureBox1
             // 
             this.pictureBox1.Image = global::Inventory_System.Properties.Resources.WhatsApp_Image_2021_10_26_at_7_42_00_PM;
@@ -194,13 +328,6 @@ namespace Inventory_System.Formularios
             this.pictureBox1.TabIndex = 2;
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Visible = false;
-            // 
-            // cerrarSesiónToolStripMenuItem
-            // 
-            this.cerrarSesiónToolStripMenuItem.Name = "cerrarSesiónToolStripMenuItem";
-            this.cerrarSesiónToolStripMenuItem.Size = new System.Drawing.Size(137, 29);
-            this.cerrarSesiónToolStripMenuItem.Text = "Cerrar Sesión";
-            this.cerrarSesiónToolStripMenuItem.Click += new System.EventHandler(this.cerrarSesiónToolStripMenuItem_Click);
             // 
             // FrmPrincipal
             // 
@@ -250,6 +377,20 @@ namespace Inventory_System.Formularios
         private System.Windows.Forms.StatusStrip statusStrip1;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.ToolStripStatusLabel LblUsuario;
-        private System.Windows.Forms.ToolStripMenuItem cerrarSesiónToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem usoDeMateriaPrimaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem listaDeTodosLosProductosToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem listaDeTodaLaMateriaPrimaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem productosToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem materiaPrimaToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem listasToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem listaInventarioProductosToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem reportesGeneralesProductosToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem palilloToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem paletasToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem bolisToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem listaInventariosMateriaPrimaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem listaPérdidasToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem listaPedidosToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem listaUsosDeMateriaPrimaToolStripMenuItem;
     }
 }

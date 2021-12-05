@@ -1,19 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
+﻿using CrystalDecisions.CrystalReports.Engine;
+using System;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using CrystalDecisions.CrystalReports.Engine;
 
 namespace Inventory_System.Formularios
 {
     public partial class FrmInventarioMP : Form
     {
-
         public Logic_Inventory.Inventario_MP MiInventarioMPLocal { get; set; }
         public DataTable DtListaMaterias { get; set; }
 
@@ -29,7 +22,6 @@ namespace Inventory_System.Formularios
             TxtUsuario.Text = Locales.ObjetosGlobales.MiUsuarioGlobal.Nombre;
             Limpiar();
         }
-
 
         private void Limpiar()
         {
@@ -53,11 +45,11 @@ namespace Inventory_System.Formularios
         private decimal Totalizar()
         {
             decimal R = 0;
-            if(DtListaMaterias.Rows.Count > 0)
+            if (DtListaMaterias.Rows.Count > 0)
             {
-                foreach(DataRow item in DtListaMaterias.Rows)
+                foreach (DataRow item in DtListaMaterias.Rows)
                 {
-                    R += Convert.ToDecimal(item["Cantidad"]) * Convert.ToDecimal(item["Total"]);
+                    R += Convert.ToInt32(item["Cantidad"]) * Convert.ToDecimal(item["Total"]);
                 }
             }
             return R;
@@ -88,7 +80,6 @@ namespace Inventory_System.Formularios
             }
             return R;
         }
-
 
         private void BtnCrearInventario_Click(object sender, EventArgs e)
         {
@@ -123,13 +114,11 @@ namespace Inventory_System.Formularios
                 }
 
             }
-
         }
-
 
         private void LlenarDetalleInventario()
         {
-            foreach(DataRow fila in DtListaMaterias.Rows)
+            foreach (DataRow fila in DtListaMaterias.Rows)
             {
                 Logic_Inventory.MP_Detalle detalle = new Logic_Inventory.MP_Detalle();
 

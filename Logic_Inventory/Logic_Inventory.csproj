@@ -136,6 +136,8 @@
     <Compile Include="Producto_Sabores.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Proveedor.cs" />
+    <Compile Include="Uso_Detalle.cs" />
+    <Compile Include="Uso_MP.cs" />
     <Compile Include="Usuario.cs" />
     <Compile Include="Usuario_Rol.cs" />
   </ItemGroup>
