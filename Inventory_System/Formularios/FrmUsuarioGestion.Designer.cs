@@ -33,6 +33,10 @@ namespace Inventory_System.Formularios
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmUsuarioGestion));
             this.DgvLista = new System.Windows.Forms.DataGridView();
+            this.ColID_Usuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColCedula = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColNombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColEmail = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.CbActivo = new System.Windows.Forms.CheckBox();
             this.label9 = new System.Windows.Forms.Label();
@@ -61,10 +65,6 @@ namespace Inventory_System.Formularios
             this.label10 = new System.Windows.Forms.Label();
             this.TxtBuscar = new System.Windows.Forms.TextBox();
             this.CbVerUsuariosActivos = new System.Windows.Forms.CheckBox();
-            this.ColID_Usuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColCedula = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColNombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColEmail = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.DgvLista)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -105,6 +105,40 @@ namespace Inventory_System.Formularios
             this.DgvLista.TabIndex = 0;
             this.DgvLista.VirtualMode = true;
             this.DgvLista.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvLista_CellClick);
+            // 
+            // ColID_Usuario
+            // 
+            this.ColID_Usuario.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.ColID_Usuario.DataPropertyName = "ID_Usuario";
+            this.ColID_Usuario.HeaderText = "Código";
+            this.ColID_Usuario.Name = "ColID_Usuario";
+            this.ColID_Usuario.ReadOnly = true;
+            this.ColID_Usuario.Width = 80;
+            // 
+            // ColCedula
+            // 
+            this.ColCedula.DataPropertyName = "Cedula";
+            this.ColCedula.HeaderText = "Cédula";
+            this.ColCedula.Name = "ColCedula";
+            this.ColCedula.ReadOnly = true;
+            this.ColCedula.Width = 200;
+            // 
+            // ColNombre
+            // 
+            this.ColNombre.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.ColNombre.DataPropertyName = "Nombre";
+            this.ColNombre.HeaderText = "Nombre";
+            this.ColNombre.Name = "ColNombre";
+            this.ColNombre.ReadOnly = true;
+            // 
+            // ColEmail
+            // 
+            this.ColEmail.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.ColEmail.DataPropertyName = "Email";
+            this.ColEmail.HeaderText = "Correo Electrónico";
+            this.ColEmail.Name = "ColEmail";
+            this.ColEmail.ReadOnly = true;
+            this.ColEmail.Width = 490;
             // 
             // groupBox1
             // 
@@ -419,40 +453,6 @@ namespace Inventory_System.Formularios
             this.CbVerUsuariosActivos.UseVisualStyleBackColor = true;
             this.CbVerUsuariosActivos.CheckedChanged += new System.EventHandler(this.CbVerUsuariosActivos_CheckedChanged);
             // 
-            // ColID_Usuario
-            // 
-            this.ColID_Usuario.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.ColID_Usuario.DataPropertyName = "ID_Usuario";
-            this.ColID_Usuario.HeaderText = "Código";
-            this.ColID_Usuario.Name = "ColID_Usuario";
-            this.ColID_Usuario.ReadOnly = true;
-            this.ColID_Usuario.Width = 80;
-            // 
-            // ColCedula
-            // 
-            this.ColCedula.DataPropertyName = "Cedula";
-            this.ColCedula.HeaderText = "Cédula";
-            this.ColCedula.Name = "ColCedula";
-            this.ColCedula.ReadOnly = true;
-            this.ColCedula.Width = 200;
-            // 
-            // ColNombre
-            // 
-            this.ColNombre.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.ColNombre.DataPropertyName = "Nombre";
-            this.ColNombre.HeaderText = "Nombre";
-            this.ColNombre.Name = "ColNombre";
-            this.ColNombre.ReadOnly = true;
-            // 
-            // ColEmail
-            // 
-            this.ColEmail.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.ColEmail.DataPropertyName = "Email";
-            this.ColEmail.HeaderText = "Correo Electrónico";
-            this.ColEmail.Name = "ColEmail";
-            this.ColEmail.ReadOnly = true;
-            this.ColEmail.Width = 490;
-            // 
             // FrmUsuarioGestion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -468,8 +468,10 @@ namespace Inventory_System.Formularios
             this.Controls.Add(this.BtnAgregar);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.DgvLista);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "FrmUsuarioGestion";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Gestión de Usuario";

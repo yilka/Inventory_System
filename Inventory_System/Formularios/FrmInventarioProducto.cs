@@ -35,6 +35,7 @@ namespace Inventory_System.Formularios
             DtListaProductos = MiInventarioPLocal.AsignarEsquemaDetalle();
             DgvListaProductos.DataSource = DtListaProductos;
             TxtTotal.Text = "0";
+            MiInventarioPLocal = new Logic_Inventory.Inventario_Producto();
         }
 
         private void BtnAgregarProducto_Click(object sender, EventArgs e)
@@ -76,6 +77,11 @@ namespace Inventory_System.Formularios
                 if (DtpFecha.Value.Date > DateTime.Now.Date)
                 {
                     MessageBox.Show(@"La fecha del inventario no puede ser superior a la fecha actual", "Error de validación", MessageBoxButtons.OK);
+                    return false;
+                }
+                else if (DtListaProductos.Rows.Count <= 0)
+                {
+                    MessageBox.Show(@"Se debe ingresar un producto para crear el Inventario", "Error de validación", MessageBoxButtons.OK);
                     return false;
                 }
             }

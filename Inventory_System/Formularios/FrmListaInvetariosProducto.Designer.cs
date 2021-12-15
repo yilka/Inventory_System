@@ -134,7 +134,10 @@ namespace Inventory_System.Formularios
             this.Controls.Add(this.BtnCancelar);
             this.Controls.Add(this.BtnReporte);
             this.Controls.Add(this.DgvListaInventariosP);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "FrmListaInvetariosProducto";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Lista de todos los Inventarios de Producto";

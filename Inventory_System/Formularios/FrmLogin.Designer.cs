@@ -29,6 +29,7 @@ namespace Inventory_System.Formularios
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmLogin));
             this.TxtUsuario = new System.Windows.Forms.TextBox();
             this.TxtContrasenna = new System.Windows.Forms.TextBox();
             this.BtnIngresar = new System.Windows.Forms.Button();
@@ -168,6 +169,7 @@ namespace Inventory_System.Formularios
             this.Controls.Add(this.TxtUsuario);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmLogin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmLogin";

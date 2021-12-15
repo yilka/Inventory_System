@@ -80,6 +80,7 @@ namespace Logic_Inventory
                         MyCnnDetalle.ListadoDeParametros.Add(new SqlParameter("@Cantidad", item.Cantidad));
 
                         MyCnnDetalle.DMLUpdateDeleteInsert("SPInventarioMPAgregarDetalle");
+                        //En el SP se puede cambiar cantidad a decimal
 
                         Materia_Prima MiMP = new Materia_Prima();
                         MiMP.SumarAStock(item.MiMateria.ID_Materia, item.Cantidad);
@@ -96,20 +97,6 @@ namespace Logic_Inventory
                     throw;
                 }
             }
-            return R;
-        }
-
-
-        public bool Anular()
-        {
-            bool R = false;
-            return R;
-        }
-
-
-        public bool ConsultarPorID()
-        {
-            bool R = false;
             return R;
         }
 

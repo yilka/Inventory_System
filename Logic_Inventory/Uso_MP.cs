@@ -79,6 +79,7 @@ namespace Logic_Inventory
                         MyCnnDetalle.ListadoDeParametros.Add(new SqlParameter("@Total", item.Total));
                         MyCnnDetalle.ListadoDeParametros.Add(new SqlParameter("@Cantidad", item.Cantidad));
 
+                        //En el SP cambiar cantidad a decimal
                         MyCnnDetalle.DMLUpdateDeleteInsert("SPUsoAgregarDetalle");
 
                         Materia_Prima MiMat = new Materia_Prima();
@@ -99,19 +100,6 @@ namespace Logic_Inventory
             return R;
         }
 
-
-        public bool Anular()
-        {
-            bool R = false;
-            return R;
-        }
-
-
-        public bool ConsultarPorID()
-        {
-            bool R = false;
-            return R;
-        }
 
 
         public DataTable ListarTodos()

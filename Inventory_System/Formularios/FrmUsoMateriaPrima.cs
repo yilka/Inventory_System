@@ -33,6 +33,7 @@ namespace Inventory_System.Formularios
             DtListaMaterias = MiUsoLocal.AsignarEsquemaDetalle();
             DgvListaMaterias.DataSource = DtListaMaterias;
             TxtTotal.Text = "0";
+            MiUsoLocal = new Logic_Inventory.Uso_MP();
         }
 
         private void BtnCancelar_Click(object sender, EventArgs e)
@@ -82,6 +83,11 @@ namespace Inventory_System.Formularios
                     MessageBox.Show(@"La fecha del uso no puede ser superior a la fecha actual", "Error de validación", MessageBoxButtons.OK);
                     return false;
                 }
+                else if (DtListaMaterias.Rows.Count <= 0)
+                {
+                    MessageBox.Show(@"Se debe ingresar una materia prima para crear el Uso", "Error de validación", MessageBoxButtons.OK);
+                    return false;
+                }
             }
             return R;
         }
@@ -94,7 +100,8 @@ namespace Inventory_System.Formularios
                 Logic_Inventory.Uso_Detalle detalle = new Logic_Inventory.Uso_Detalle();
 
                 detalle.MiMateria.ID_Materia = Convert.ToInt32(fila["ID_Materia"]);
-                detalle.Cantidad = Convert.ToInt32(fila["Cantidad"]);
+                //Cambiar cantidad a decimal
+                detalle.Cantidad = Convert.ToDecimal(fila["Cantidad"]);
                 detalle.Total = Convert.ToDecimal(fila["Total"]);
                 detalle.MiMateria.Nombre = fila["Nombre"].ToString();
 

@@ -89,7 +89,7 @@ namespace Logic_Inventory
             {
                 Conexion MiCnn = new Conexion();
                 MiCnn.ListadoDeParametros.Add(new SqlParameter("@Id", this.ID_Proveedor));
-                int retorno = MiCnn.DMLUpdateDeleteInsert("SPUsuarioDesactivar");
+                int retorno = MiCnn.DMLUpdateDeleteInsert("SPProveedorDesactivar");
 
                 if(retorno > 0)
                 {

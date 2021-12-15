@@ -30,6 +30,7 @@ namespace Inventory_System.Formularios
             DtListaProductos = MiPedidoLocal.AsignarEsquemaDetalle();
             DgvListaProductos.DataSource = DtListaProductos;
             TxtTotal.Text = "0";
+            MiPedidoLocal = new Logic_Inventory.Pedido();
         }
 
 
@@ -84,6 +85,11 @@ namespace Inventory_System.Formularios
                     MessageBox.Show("Se requiere ingresar el nombre del cliente", "", MessageBoxButtons.OK);
                     TxtCliente.Focus();
                     TxtCliente.SelectAll();
+                }
+                else if(DtListaProductos.Rows.Count <= 0)
+                {
+                    MessageBox.Show(@"Se debe ingresar un producto para crear el Pedido", "Error de validación", MessageBoxButtons.OK);
+                    return false;
                 }
 
        

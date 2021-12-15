@@ -211,7 +211,7 @@ namespace Inventory_System.Formularios
                     MiMateria.Nombre = TxtNombre.Text.Trim();
                     MiMateria.Precio = Convert.ToDecimal(value: TxtPrecio.Text);
                     MiMateria.Descripcion = TxtDescripcion.Text.Trim();
-                    MiMateria.CantidadEnStock = Convert.ToInt32(TxtCantidadStock.Text);
+                    MiMateria.CantidadEnStock = Convert.ToDecimal(TxtCantidadStock.Text);
                     MiMateria.Categoria.ID_MPCategoria = Convert.ToInt32(CboxCategoria.SelectedValue);
                     MiMateria.MiProveedor.ID_Proveedor = Convert.ToInt32(CboxProveedor.SelectedValue);
 
@@ -324,7 +324,7 @@ namespace Inventory_System.Formularios
                 MiMateria.Nombre = TxtNombre.Text.Trim();
                 MiMateria.Precio = Convert.ToDecimal(value: TxtPrecio.Text);
                 MiMateria.Descripcion = TxtDescripcion.Text.Trim();
-                MiMateria.CantidadEnStock = Convert.ToInt32(TxtCantidadStock.Text);
+                MiMateria.CantidadEnStock = Convert.ToDecimal(TxtCantidadStock.Text);
                 MiMateria.Categoria.ID_MPCategoria = Convert.ToInt32(CboxCategoria.SelectedValue);
                 MiMateria.MiProveedor.ID_Proveedor = Convert.ToInt32(CboxProveedor.SelectedValue);
 
@@ -361,7 +361,7 @@ namespace Inventory_System.Formularios
 
         private void TxtCantidadStock_KeyPress(object sender, KeyPressEventArgs e)
         {
-            e.Handled = Herramientas.CaracteresNumeros(e);
+            //e.Handled = Herramientas.CaracteresNumeros(e);
         }
     }
 }

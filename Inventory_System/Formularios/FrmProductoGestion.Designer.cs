@@ -412,10 +412,10 @@ namespace Inventory_System.Formularios
             // ColCodigo_Barras
             // 
             this.ColCodigo_Barras.DataPropertyName = "Codigo_Barras";
-            this.ColCodigo_Barras.HeaderText = "Código de Barras";
+            this.ColCodigo_Barras.HeaderText = "Código de Producto";
             this.ColCodigo_Barras.Name = "ColCodigo_Barras";
             this.ColCodigo_Barras.ReadOnly = true;
-            this.ColCodigo_Barras.Width = 190;
+            this.ColCodigo_Barras.Width = 210;
             // 
             // ColNombre
             // 
@@ -457,8 +457,10 @@ namespace Inventory_System.Formularios
             this.Controls.Add(this.BtnAgregar);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.DgvLista);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "FrmProductoGestion";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Gestión de Producto";

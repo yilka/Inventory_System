@@ -12,7 +12,8 @@ namespace Logic_Inventory
         public string Codigo_Barras { get; set; }
         public decimal Precio { get; set; }
         public string Descripcion { get; set; }
-        public int CantidadEnStock { get; set; }
+        //Cambiar cantidad a decimal
+        public decimal CantidadEnStock { get; set; }
         public bool Activo { get; set; }
 
         public MP_Categoria Categoria { get; set; }
@@ -51,6 +52,32 @@ namespace Logic_Inventory
             return R;
         }
 
+
+        public ReportDocument ImprimirTodos(ReportDocument repo)
+        {
+            ReportDocument R = repo;
+
+            Crystal ObjCrytal = new Crystal(R);
+
+            DataTable Datos = new DataTable();
+
+            Conexion MiCnn = new Conexion();
+
+            Datos = MiCnn.DMLSelect("SPTodasLasMaterias");
+
+            if (Datos != null && Datos.Rows.Count > 0)
+            {
+                ObjCrytal.Datos = Datos;
+
+                R = ObjCrytal.GenerarReporte();
+            }
+
+            return R;
+        }
+
+
+
+
         public bool Agregar()
         {
             bool R = false;
@@ -68,6 +95,7 @@ namespace Logic_Inventory
                 MiCnn.ListadoDeParametros.Add(new SqlParameter("@IDProveedor", this.MiProveedor.ID_Proveedor));
                 MiCnn.ListadoDeParametros.Add(new SqlParameter("@Codigo_Barras", this.Codigo_Barras));
 
+                //En el SP cambiar cantidad a decimal
                 int retorno = MiCnn.DMLUpdateDeleteInsert("SPMateriaAgregar");
 
                 if (retorno > 0)
@@ -82,7 +110,7 @@ namespace Logic_Inventory
             return R;
         }
 
-        public bool SumarAStock(int IdMateria, int Cantidad)
+        public bool SumarAStock(int IdMateria, decimal Cantidad)
         {
             bool R = false;
             try
@@ -93,7 +121,7 @@ namespace Logic_Inventory
                 MiCnn.ListadoDeParametros.Add(new SqlParameter("@Cant", Cantidad));
                
 
-
+                //En el SP cambiar cantidad a decimal
                 int retorno = MiCnn.DMLUpdateDeleteInsert("SPMateriaSumarStock");
                 if (retorno > 0)
                 {
@@ -110,7 +138,7 @@ namespace Logic_Inventory
 
 
 
-        public bool RestarAStock(int IdMateria, int Cantidad)
+        public bool RestarAStock(int IdMateria, decimal Cantidad)
         {
             bool R = false;
             try
@@ -121,7 +149,7 @@ namespace Logic_Inventory
                 MiCnn.ListadoDeParametros.Add(new SqlParameter("@Cant", Cantidad));
 
 
-
+                //En el SP cambiar cantidad a decimal
                 int retorno = MiCnn.DMLUpdateDeleteInsert("SPMateriaRestarStock");
                 if (retorno > 0)
                 {
@@ -153,7 +181,7 @@ namespace Logic_Inventory
                 MiCnn.ListadoDeParametros.Add(new SqlParameter("@IDCategoria", this.Categoria.ID_MPCategoria));
                 MiCnn.ListadoDeParametros.Add(new SqlParameter("@IDProveedor", this.MiProveedor.ID_Proveedor));
 
-
+                //En el SP cambiar cantidad a decimal
                 int retorno = MiCnn.DMLUpdateDeleteInsert("SPMateriaEditar");
                 if (retorno > 0)
                 {
@@ -232,7 +260,8 @@ namespace Logic_Inventory
                 R.Nombre = Convert.ToString(MiFila["Nombre"]);
                 R.Precio = Convert.ToDecimal(MiFila["Precio"]);
                 R.Descripcion = Convert.ToString(MiFila["Descripcion"]);
-                R.CantidadEnStock = Convert.ToInt32(MiFila["CantidadEnStock"]);
+                //Cambiar cantidad a decimal
+                R.CantidadEnStock = Convert.ToDecimal(MiFila["CantidadEnStock"]);
                 R.Activo = Convert.ToBoolean(MiFila["Activo"]);
                 R.Codigo_Barras = Convert.ToString(MiFila["Codigo_Barras"]);
                 R.Categoria.ID_MPCategoria = Convert.ToInt32(MiFila["ID_MPCategoria"]);

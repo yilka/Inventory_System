@@ -33,15 +33,15 @@ namespace Inventory_System.Formularios
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmMPDetalle));
             this.DgvListaMaterias = new System.Windows.Forms.DataGridView();
-            this.ColID_Materia = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColNombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColCantidadEnStock = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColPrecio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1 = new System.Windows.Forms.Panel();
             this.NudCantidad = new System.Windows.Forms.NumericUpDown();
             this.label1 = new System.Windows.Forms.Label();
             this.BtnAceptar = new System.Windows.Forms.Button();
             this.BtnCancelar = new System.Windows.Forms.Button();
+            this.ColID_Materia = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColNombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColCantidadEnStock = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColPrecio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.DgvListaMaterias)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.NudCantidad)).BeginInit();
@@ -82,36 +82,6 @@ namespace Inventory_System.Formularios
             this.DgvListaMaterias.Size = new System.Drawing.Size(916, 319);
             this.DgvListaMaterias.TabIndex = 0;
             // 
-            // ColID_Materia
-            // 
-            this.ColID_Materia.DataPropertyName = "ID_Materia";
-            this.ColID_Materia.HeaderText = "Código";
-            this.ColID_Materia.Name = "ColID_Materia";
-            this.ColID_Materia.ReadOnly = true;
-            // 
-            // ColNombre
-            // 
-            this.ColNombre.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.ColNombre.DataPropertyName = "Nombre";
-            this.ColNombre.HeaderText = "Nombre";
-            this.ColNombre.Name = "ColNombre";
-            this.ColNombre.ReadOnly = true;
-            // 
-            // ColCantidadEnStock
-            // 
-            this.ColCantidadEnStock.DataPropertyName = "CantidadEnStock";
-            this.ColCantidadEnStock.HeaderText = "Cantidad Almacenada";
-            this.ColCantidadEnStock.Name = "ColCantidadEnStock";
-            this.ColCantidadEnStock.ReadOnly = true;
-            this.ColCantidadEnStock.Width = 220;
-            // 
-            // ColPrecio
-            // 
-            this.ColPrecio.DataPropertyName = "Precio";
-            this.ColPrecio.HeaderText = "Precio";
-            this.ColPrecio.Name = "ColPrecio";
-            this.ColPrecio.ReadOnly = true;
-            // 
             // panel1
             // 
             this.panel1.Controls.Add(this.NudCantidad);
@@ -123,11 +93,22 @@ namespace Inventory_System.Formularios
             // 
             // NudCantidad
             // 
+            this.NudCantidad.DecimalPlaces = 2;
             this.NudCantidad.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.NudCantidad.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.NudCantidad.Location = new System.Drawing.Point(406, 71);
+            this.NudCantidad.Increment = new decimal(new int[] {
+            100,
+            0,
+            0,
+            0});
+            this.NudCantidad.Location = new System.Drawing.Point(378, 71);
+            this.NudCantidad.Maximum = new decimal(new int[] {
+            100000,
+            0,
+            0,
+            0});
             this.NudCantidad.Name = "NudCantidad";
-            this.NudCantidad.Size = new System.Drawing.Size(120, 29);
+            this.NudCantidad.Size = new System.Drawing.Size(153, 29);
             this.NudCantidad.TabIndex = 1;
             this.NudCantidad.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -136,7 +117,7 @@ namespace Inventory_System.Formularios
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label1.Location = new System.Drawing.Point(332, 28);
+            this.label1.Location = new System.Drawing.Point(337, 28);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(237, 25);
             this.label1.TabIndex = 0;
@@ -170,6 +151,36 @@ namespace Inventory_System.Formularios
             this.BtnCancelar.UseVisualStyleBackColor = false;
             this.BtnCancelar.Click += new System.EventHandler(this.BtnCancelar_Click);
             // 
+            // ColID_Materia
+            // 
+            this.ColID_Materia.DataPropertyName = "ID_Materia";
+            this.ColID_Materia.HeaderText = "Código";
+            this.ColID_Materia.Name = "ColID_Materia";
+            this.ColID_Materia.ReadOnly = true;
+            // 
+            // ColNombre
+            // 
+            this.ColNombre.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.ColNombre.DataPropertyName = "Nombre";
+            this.ColNombre.HeaderText = "Nombre";
+            this.ColNombre.Name = "ColNombre";
+            this.ColNombre.ReadOnly = true;
+            // 
+            // ColCantidadEnStock
+            // 
+            this.ColCantidadEnStock.DataPropertyName = "CantidadEnStock";
+            this.ColCantidadEnStock.HeaderText = "Cantidad Almacenada";
+            this.ColCantidadEnStock.Name = "ColCantidadEnStock";
+            this.ColCantidadEnStock.ReadOnly = true;
+            this.ColCantidadEnStock.Width = 220;
+            // 
+            // ColPrecio
+            // 
+            this.ColPrecio.DataPropertyName = "Precio";
+            this.ColPrecio.HeaderText = "Precio";
+            this.ColPrecio.Name = "ColPrecio";
+            this.ColPrecio.ReadOnly = true;
+            // 
             // FrmMPDetalle
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -179,8 +190,10 @@ namespace Inventory_System.Formularios
             this.Controls.Add(this.BtnAceptar);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.DgvListaMaterias);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "FrmMPDetalle";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Detalle Inventario Materia Prima";

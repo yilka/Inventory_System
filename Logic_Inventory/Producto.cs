@@ -53,6 +53,98 @@ namespace Logic_Inventory
             return R;
         }
 
+        public ReportDocument ImprimirTodos(ReportDocument repo)
+        {
+            ReportDocument R = repo;
+
+            Crystal ObjCrytal = new Crystal(R);
+
+            DataTable Datos = new DataTable();
+
+            Conexion MiCnn = new Conexion();
+
+            Datos = MiCnn.DMLSelect("SPTodosProductos");
+
+            if (Datos != null && Datos.Rows.Count > 0)
+            {
+                ObjCrytal.Datos = Datos;
+
+                R = ObjCrytal.GenerarReporte();
+            }
+
+            return R;
+        }
+
+
+
+        public ReportDocument ImprimirBolis(ReportDocument repo)
+        {
+            ReportDocument R = repo;
+
+            Crystal ObjCrytal = new Crystal(R);
+
+            DataTable Datos = new DataTable();
+
+            Conexion MiCnn = new Conexion();
+
+            Datos = MiCnn.DMLSelect("SPTodosBolis");
+
+            if (Datos != null && Datos.Rows.Count > 0)
+            {
+                ObjCrytal.Datos = Datos;
+
+                R = ObjCrytal.GenerarReporte();
+            }
+
+            return R;
+        }
+
+
+        public ReportDocument ImprimirPaletas(ReportDocument repo)
+        {
+            ReportDocument R = repo;
+
+            Crystal ObjCrytal = new Crystal(R);
+
+            DataTable Datos = new DataTable();
+
+            Conexion MiCnn = new Conexion();
+
+            Datos = MiCnn.DMLSelect("SPTodosPaletas");
+
+            if (Datos != null && Datos.Rows.Count > 0)
+            {
+                ObjCrytal.Datos = Datos;
+
+                R = ObjCrytal.GenerarReporte();
+            }
+
+            return R;
+        }
+
+
+
+        public ReportDocument ImprimirPalillo(ReportDocument repo)
+        {
+            ReportDocument R = repo;
+
+            Crystal ObjCrytal = new Crystal(R);
+
+            DataTable Datos = new DataTable();
+
+            Conexion MiCnn = new Conexion();
+
+            Datos = MiCnn.DMLSelect("SPTodosPalillo");
+
+            if (Datos != null && Datos.Rows.Count > 0)
+            {
+                ObjCrytal.Datos = Datos;
+
+                R = ObjCrytal.GenerarReporte();
+            }
+
+            return R;
+        }
 
 
 

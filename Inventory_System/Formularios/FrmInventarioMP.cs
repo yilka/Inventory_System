@@ -29,6 +29,7 @@ namespace Inventory_System.Formularios
             DtListaMaterias = MiInventarioMPLocal.AsignarEsquemaDetalle();
             DgvListaMaterias.DataSource = DtListaMaterias;
             TxtTotal.Text = "0";
+            MiInventarioMPLocal = new Logic_Inventory.Inventario_MP();
         }
 
         private void BtnAgregarMateria_Click(object sender, EventArgs e)
@@ -37,6 +38,14 @@ namespace Inventory_System.Formularios
             DialogResult Resp = FormBuscarItem.ShowDialog();
             if (Resp == DialogResult.OK)
             {
+                //foreach(DataGridViewRow row in DgvListaMaterias.Rows)
+                //{
+                //    if(DtListaMaterias.ID_Materia == Convert.ToDecimal(row.Cells["ColID_Materia"].Value))
+                //    {
+
+                //    }
+                //}
+
                 DgvListaMaterias.DataSource = DtListaMaterias;
                 TxtTotal.Text = string.Format("{0:C2}", Totalizar());
             }
@@ -49,7 +58,7 @@ namespace Inventory_System.Formularios
             {
                 foreach (DataRow item in DtListaMaterias.Rows)
                 {
-                    R += Convert.ToInt32(item["Cantidad"]) * Convert.ToDecimal(item["Total"]);
+                    R += Convert.ToDecimal(item["Cantidad"]) * Convert.ToDecimal(item["Total"]);
                 }
             }
             return R;
@@ -75,6 +84,11 @@ namespace Inventory_System.Formularios
                 if (DtpFecha.Value.Date > DateTime.Now.Date)
                 {
                     MessageBox.Show(@"La fecha del inventario no puede ser superior a la fecha actual", "Error de validación", MessageBoxButtons.OK);
+                    return false;
+                }
+                else if (DtListaMaterias.Rows.Count <= 0)
+                {
+                    MessageBox.Show(@"Se debe ingresar una materia prima para crear el Inventario", "Error de validación", MessageBoxButtons.OK);
                     return false;
                 }
             }
@@ -109,7 +123,6 @@ namespace Inventory_System.Formularios
 
                     MiFormCRV.CrvVisualizador.Zoom(1);
 
-
                     Limpiar();
                 }
 
@@ -123,7 +136,7 @@ namespace Inventory_System.Formularios
                 Logic_Inventory.MP_Detalle detalle = new Logic_Inventory.MP_Detalle();
 
                 detalle.MiMateria.ID_Materia = Convert.ToInt32(fila["ID_Materia"]);
-                detalle.Cantidad = Convert.ToInt32(fila["Cantidad"]);
+                detalle.Cantidad = Convert.ToDecimal(fila["Cantidad"]);
                 detalle.Total = Convert.ToDecimal(fila["Total"]);
                 detalle.MiMateria.Nombre = fila["Nombre"].ToString();
 

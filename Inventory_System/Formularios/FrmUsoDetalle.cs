@@ -62,7 +62,7 @@ namespace Inventory_System.Formularios
                 NuevaFila["Nombre"] = DgvListaMaterias.SelectedRows[0].Cells["ColNombre"].Value.ToString();
                 NuevaFila["Total"] = DgvListaMaterias.SelectedRows[0].Cells["ColPrecio"].Value.ToString();
                 NuevaFila["Cantidad"] = NudCantidad.Value;
-
+                
                 Locales.ObjetosGlobales.MiFormGestionUsoMP.DtListaMaterias.Rows.Add(NuevaFila);
                 this.DialogResult = DialogResult.OK;
             }

@@ -36,6 +36,7 @@ namespace Inventory_System.Formularios
             DtListaProductos = MiPerdidaLocal.AsignarEsquemaDetalle();
             DgvListaProductos.DataSource = DtListaProductos;
             TxtTotal.Text = "0";
+            MiPerdidaLocal = new Logic_Inventory.Perdidas();
         }
 
         private void BtnAgregarProducto_Click(object sender, EventArgs e)
@@ -79,6 +80,11 @@ namespace Inventory_System.Formularios
                 if (DtpFecha.Value.Date > DateTime.Now.Date)
                 {
                     MessageBox.Show(@"La fecha de la pérdida no puede ser superior a la fecha actual", "Error de validación", MessageBoxButtons.OK);
+                    return false;
+                }
+                else if (DtListaProductos.Rows.Count <= 0)
+                {
+                    MessageBox.Show(@"Se debe ingresar un producto para crear la Pérdida", "Error de validación", MessageBoxButtons.OK);
                     return false;
                 }
             }

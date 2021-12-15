@@ -29,18 +29,15 @@ namespace Inventory_System.Formularios
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmInventarioMP));
             this.BtnCancelar = new System.Windows.Forms.Button();
             this.BtnCrearInventario = new System.Windows.Forms.Button();
             this.TxtTotal = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.DgvListaMaterias = new System.Windows.Forms.DataGridView();
-            this.ColID_Materia = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColNombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColCantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColTotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.BtnEliminarMateria = new System.Windows.Forms.Button();
             this.BtnAgregarMateria = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -49,6 +46,10 @@ namespace Inventory_System.Formularios
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.DtpFecha = new System.Windows.Forms.DateTimePicker();
+            this.ColID_Materia = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColNombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColCantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColTotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DgvListaMaterias)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -120,28 +121,28 @@ namespace Inventory_System.Formularios
             this.DgvListaMaterias.AllowUserToAddRows = false;
             this.DgvListaMaterias.AllowUserToDeleteRows = false;
             this.DgvListaMaterias.BackgroundColor = System.Drawing.Color.Gainsboro;
-            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle11.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle11.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle11.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.InactiveCaption;
-            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DgvListaMaterias.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.InactiveCaption;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DgvListaMaterias.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.DgvListaMaterias.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DgvListaMaterias.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ColID_Materia,
             this.ColNombre,
             this.ColCantidad,
             this.ColTotal});
-            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle12.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle12.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle12.ForeColor = System.Drawing.SystemColors.ControlDark;
-            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.SystemColors.InactiveCaption;
-            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.DgvListaMaterias.DefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlDark;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.InactiveCaption;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.DgvListaMaterias.DefaultCellStyle = dataGridViewCellStyle2;
             this.DgvListaMaterias.Location = new System.Drawing.Point(6, 62);
             this.DgvListaMaterias.MultiSelect = false;
             this.DgvListaMaterias.Name = "DgvListaMaterias";
@@ -151,35 +152,6 @@ namespace Inventory_System.Formularios
             this.DgvListaMaterias.Size = new System.Drawing.Size(905, 304);
             this.DgvListaMaterias.TabIndex = 3;
             this.DgvListaMaterias.VirtualMode = true;
-            // 
-            // ColID_Materia
-            // 
-            this.ColID_Materia.DataPropertyName = "ID_Materia";
-            this.ColID_Materia.HeaderText = "Código";
-            this.ColID_Materia.Name = "ColID_Materia";
-            this.ColID_Materia.ReadOnly = true;
-            // 
-            // ColNombre
-            // 
-            this.ColNombre.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.ColNombre.DataPropertyName = "Nombre";
-            this.ColNombre.HeaderText = "Materia Prima";
-            this.ColNombre.Name = "ColNombre";
-            this.ColNombre.ReadOnly = true;
-            // 
-            // ColCantidad
-            // 
-            this.ColCantidad.DataPropertyName = "Cantidad";
-            this.ColCantidad.HeaderText = "Cantidad";
-            this.ColCantidad.Name = "ColCantidad";
-            this.ColCantidad.ReadOnly = true;
-            // 
-            // ColTotal
-            // 
-            this.ColTotal.DataPropertyName = "Total";
-            this.ColTotal.HeaderText = "Precio";
-            this.ColTotal.Name = "ColTotal";
-            this.ColTotal.ReadOnly = true;
             // 
             // BtnEliminarMateria
             // 
@@ -272,6 +244,36 @@ namespace Inventory_System.Formularios
             this.DtpFecha.Size = new System.Drawing.Size(346, 29);
             this.DtpFecha.TabIndex = 0;
             // 
+            // ColID_Materia
+            // 
+            this.ColID_Materia.DataPropertyName = "ID_Materia";
+            this.ColID_Materia.HeaderText = "Código";
+            this.ColID_Materia.Name = "ColID_Materia";
+            this.ColID_Materia.ReadOnly = true;
+            // 
+            // ColNombre
+            // 
+            this.ColNombre.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.ColNombre.DataPropertyName = "Nombre";
+            this.ColNombre.HeaderText = "Materia Prima";
+            this.ColNombre.Name = "ColNombre";
+            this.ColNombre.ReadOnly = true;
+            // 
+            // ColCantidad
+            // 
+            this.ColCantidad.DataPropertyName = "Cantidad";
+            this.ColCantidad.HeaderText = "Cantidad";
+            this.ColCantidad.Name = "ColCantidad";
+            this.ColCantidad.ReadOnly = true;
+            this.ColCantidad.Width = 200;
+            // 
+            // ColTotal
+            // 
+            this.ColTotal.DataPropertyName = "Total";
+            this.ColTotal.HeaderText = "Precio";
+            this.ColTotal.Name = "ColTotal";
+            this.ColTotal.ReadOnly = true;
+            // 
             // FrmInventarioMP
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -283,9 +285,13 @@ namespace Inventory_System.Formularios
             this.Controls.Add(this.label4);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "FrmInventarioMP";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "FrmInventarioMP";
+            this.Text = "Inventario de Materia Prima";
             this.Load += new System.EventHandler(this.FrmInventarioMP_Load);
             this.groupBox2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.DgvListaMaterias)).EndInit();
@@ -304,10 +310,6 @@ namespace Inventory_System.Formularios
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.DataGridView DgvListaMaterias;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColID_Materia;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColNombre;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColCantidad;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColTotal;
         private System.Windows.Forms.Button BtnEliminarMateria;
         private System.Windows.Forms.Button BtnAgregarMateria;
         private System.Windows.Forms.GroupBox groupBox1;
@@ -316,5 +318,9 @@ namespace Inventory_System.Formularios
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DateTimePicker DtpFecha;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColID_Materia;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColNombre;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColCantidad;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColTotal;
     }
 }

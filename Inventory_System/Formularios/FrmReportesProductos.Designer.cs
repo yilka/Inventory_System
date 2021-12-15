@@ -33,12 +33,12 @@ namespace Inventory_System.Formularios
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmReportesProductos));
             this.DgvLista = new System.Windows.Forms.DataGridView();
-            this.BtnCancelar = new System.Windows.Forms.Button();
-            this.BtnReporte = new System.Windows.Forms.Button();
             this.ColID_Producto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColCodigo_Barras = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColNombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColCantidadEnStock = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.BtnCancelar = new System.Windows.Forms.Button();
+            this.BtnReporte = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.DgvLista)).BeginInit();
             this.SuspendLayout();
             // 
@@ -78,34 +78,6 @@ namespace Inventory_System.Formularios
             this.DgvLista.TabIndex = 41;
             this.DgvLista.VirtualMode = true;
             // 
-            // BtnCancelar
-            // 
-            this.BtnCancelar.BackColor = System.Drawing.Color.IndianRed;
-            this.BtnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnCancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnCancelar.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.BtnCancelar.Location = new System.Drawing.Point(648, 620);
-            this.BtnCancelar.Name = "BtnCancelar";
-            this.BtnCancelar.Size = new System.Drawing.Size(281, 40);
-            this.BtnCancelar.TabIndex = 43;
-            this.BtnCancelar.Text = "Cancelar";
-            this.BtnCancelar.UseVisualStyleBackColor = false;
-            this.BtnCancelar.Click += new System.EventHandler(this.BtnCancelar_Click);
-            // 
-            // BtnReporte
-            // 
-            this.BtnReporte.BackColor = System.Drawing.Color.Brown;
-            this.BtnReporte.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnReporte.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnReporte.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.BtnReporte.Location = new System.Drawing.Point(12, 535);
-            this.BtnReporte.Name = "BtnReporte";
-            this.BtnReporte.Size = new System.Drawing.Size(916, 40);
-            this.BtnReporte.TabIndex = 42;
-            this.BtnReporte.Text = "Mostrar Reporte";
-            this.BtnReporte.UseVisualStyleBackColor = false;
-            this.BtnReporte.Click += new System.EventHandler(this.BtnReporte_Click);
-            // 
             // ColID_Producto
             // 
             this.ColID_Producto.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
@@ -139,6 +111,34 @@ namespace Inventory_System.Formularios
             this.ColCantidadEnStock.ReadOnly = true;
             this.ColCantidadEnStock.Width = 220;
             // 
+            // BtnCancelar
+            // 
+            this.BtnCancelar.BackColor = System.Drawing.Color.IndianRed;
+            this.BtnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnCancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnCancelar.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.BtnCancelar.Location = new System.Drawing.Point(648, 620);
+            this.BtnCancelar.Name = "BtnCancelar";
+            this.BtnCancelar.Size = new System.Drawing.Size(281, 40);
+            this.BtnCancelar.TabIndex = 43;
+            this.BtnCancelar.Text = "Cancelar";
+            this.BtnCancelar.UseVisualStyleBackColor = false;
+            this.BtnCancelar.Click += new System.EventHandler(this.BtnCancelar_Click);
+            // 
+            // BtnReporte
+            // 
+            this.BtnReporte.BackColor = System.Drawing.Color.Brown;
+            this.BtnReporte.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnReporte.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnReporte.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.BtnReporte.Location = new System.Drawing.Point(12, 535);
+            this.BtnReporte.Name = "BtnReporte";
+            this.BtnReporte.Size = new System.Drawing.Size(916, 40);
+            this.BtnReporte.TabIndex = 42;
+            this.BtnReporte.Text = "Mostrar Reporte";
+            this.BtnReporte.UseVisualStyleBackColor = false;
+            this.BtnReporte.Click += new System.EventHandler(this.BtnReporte_Click);
+            // 
             // FrmReportesProductos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -147,7 +147,10 @@ namespace Inventory_System.Formularios
             this.Controls.Add(this.BtnCancelar);
             this.Controls.Add(this.BtnReporte);
             this.Controls.Add(this.DgvLista);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "FrmReportesProductos";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Reportes de los Productos";

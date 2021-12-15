@@ -6,10 +6,13 @@ namespace Inventory_System.Formularios
 {
     public partial class FrmPrincipal : Form
     {
-
+        public Logic_Inventory.Producto MiProducto { get; set; }
+        public Logic_Inventory.Materia_Prima MiMateria { get; set; }
         public FrmPrincipal()
         {
             InitializeComponent();
+            MiProducto = new Logic_Inventory.Producto();
+            MiMateria = new Logic_Inventory.Materia_Prima();
         }
 
 
@@ -132,6 +135,8 @@ namespace Inventory_System.Formularios
 
             MiReporteProductos = new Reportes.RptTodosLosProductos();
 
+            MiReporteProductos = MiProducto.ImprimirTodos(MiReporteProductos);
+
             FrmVisualizadorReportes MiFormCRV = new FrmVisualizadorReportes();
 
             MiFormCRV.CrvVisualizador.ReportSource = MiReporteProductos;
@@ -146,6 +151,8 @@ namespace Inventory_System.Formularios
             ReportDocument MiReporteMaterias = new ReportDocument();
 
             MiReporteMaterias = new Reportes.RptTodasLasMateriasPrimas();
+
+            MiReporteMaterias = MiMateria.ImprimirTodos(MiReporteMaterias);
 
             FrmVisualizadorReportes MiFormCRV = new FrmVisualizadorReportes();
 
@@ -191,6 +198,8 @@ namespace Inventory_System.Formularios
 
             MiReporteGeneralPalillo = new Reportes.RptGeneralPalillo();
 
+            MiReporteGeneralPalillo = MiProducto.ImprimirPalillo(MiReporteGeneralPalillo);
+
             FrmVisualizadorReportes MiFormCRV = new FrmVisualizadorReportes();
 
             MiFormCRV.CrvVisualizador.ReportSource = MiReporteGeneralPalillo;
@@ -206,6 +215,8 @@ namespace Inventory_System.Formularios
 
             MiReporteGeneralPaletas = new Reportes.RptGeneralPaletas();
 
+            MiReporteGeneralPaletas = MiProducto.ImprimirPaletas(MiReporteGeneralPaletas);
+
             FrmVisualizadorReportes MiFormCRV = new FrmVisualizadorReportes();
 
             MiFormCRV.CrvVisualizador.ReportSource = MiReporteGeneralPaletas;
@@ -220,6 +231,8 @@ namespace Inventory_System.Formularios
             ReportDocument MiReporteGeneralBolis = new ReportDocument();
 
             MiReporteGeneralBolis = new Reportes.RptGeneralBolis();
+
+            MiReporteGeneralBolis = MiProducto.ImprimirBolis(MiReporteGeneralBolis);
 
             FrmVisualizadorReportes MiFormCRV = new FrmVisualizadorReportes();
 

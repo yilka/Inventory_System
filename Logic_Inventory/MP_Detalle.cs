@@ -8,7 +8,8 @@ namespace Logic_Inventory
 {
     public class MP_Detalle
     {
-        public int Cantidad { get; set; }
+        //Cantidad se puede pasar a decimal
+        public decimal Cantidad { get; set; } 
         public decimal Total { get; set; }
 
         public Materia_Prima MiMateria { get; set; }

@@ -49,6 +49,8 @@ namespace Logic_Inventory
         }
 
 
+
+
         public bool Agregar()
         {
             bool R = false;
